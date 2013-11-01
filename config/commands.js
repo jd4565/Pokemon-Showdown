@@ -1131,6 +1131,20 @@ var commands = exports.commands = {
 
 	//TRAINER CARDS - Brittle, please try and keep them neat :)
 
+	promotions: function(target, room, user) {
+		if (!this.canBroadcast()) return;
+		this.sendReplyBox('<center>Promotions on Frost<br \>' +
+		'There are three things to remember about how promotions happen on Frost<br \>' + 
+		'1: Do. Not. Ask. Asking for a promotion basically guarantees you do not get the promotion. It is annoying, immature, and downright rude.<br \>' +
+		'Plus, do not try and drop hints or imply that you want to be promoted. That is just stupid'<br \>' +
+		'2: Be active on Frost enough to be noticed as a good user. Staff are always in chat monitoring it, and taking note of good users.'<br \>' +
+		'3: Do not complain or rant about promotions that other people receive. It makes you look childish, and disrupts the entire chat. If you have a complaint about a specific person, use /complain (message).<br \>' +
+		);
+	},
+	
+	
+	
+	
 	lenora: function(target, room, user) {
 		if (!this.canBroadcast()) return;
 		this.sendReplyBox('Trainer: Lenora<br \>' +
@@ -1158,17 +1172,7 @@ var commands = exports.commands = {
         	'<img src="http://www.animeyume.com/ludicolo.jpg">');
     	},
 
-	champwickedweavile: function(target, room, user) {
-        if (!this.canBroadcast()) return;
-        this.sendReplyBox('Trainer: ChampWickedWeavile<br \>' +
-		'Ace: Scyther<br \>' +
-		'Catchphrase: I suck at this game.<br \>' +
-        '<img src="http://play.pokemonshowdown.com/sprites/trainers/80.png">')
-    },
-
-	championdarkrai: function(target, room, user) {
-        if (!this.canBroadcast()) return;
-        this.sendReplyBox('Trainer: ChampWickedWeavile<br \>' +
+	champwickedner: ChampWickedWeavile<br \>' +
 		'Ace: Darkrai<br \>' +
 		'Catchphrase: Thats a nice dream you have there, it would be a shame if someone.....ATE IT.<br \>' +
         '<img src="http://pokecharms.com/data/trainercardmaker/characters/custom/Cosplayers/p491-1.png">')
