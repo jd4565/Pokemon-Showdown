@@ -1465,10 +1465,10 @@ var commands = exports.commands = {
 		'<br /><br /><marquee direction="right" behavior=alternate><img src="http://fc06.deviantart.net/fs70/f/2013/070/4/f/catbug_avatar_by_kezzi_rose-d5xq7ev.gif"></marquee>');
 	},
 	
-	cookies: 'sirecookies',
-	sircookies: function(target, room, user) {
+	meloetta: 'sirecookies',
+	smexymeloetta: function(target, room, user) {
 		if (!this.canBroadcast()) return;
-		this.sendReplyBox('<center><img src="http://i.imgur.com/OXSg9bK.gif"><br><img src="http://i.imgur.com/4JGoVHH.gif"><font size="7" color="#B40404"><i>Sir Cookie</i><img src="http://i.imgur.com/KWcACrr.gif"></font></color><br><center>Bandi is mine. MINEMINEMINE');
+		this.sendReplyBox('<center><img src="http://i.imgur.com/OXSg9bK.gif"><br><img src="http://i.imgur.com/4JGoVHH.gif"><font size="7" color="#B40404"><i>Smexy Meloetta</i><img src="http://i.imgur.com/KWcACrr.gif"></font></color><br><center>Bandi is mine. MINEMINEMINE');
 	},
 	
 	piled: function(target, room, user) {
@@ -1479,7 +1479,7 @@ var commands = exports.commands = {
 	twistedfate: 'auraburst',
 	auraburst: function(target, room, user) {
 		if (!this.canBroadcast()) return;
-		this.sendReplyBox('<center><img src="http://i.imgur.com/vrXy1Hy.png"><br><img src="http://i.imgur.com/FP2uMdp.gif"><br><blink><font color="red">Ace: Heatran</blink><br>You may hate me, but don\'t worry, I hate you too.');
+		this.sendReplyBox('<center><img src="http://i.imgur.com/vrXy1Hy.png"><br><img src="http://i.imgur.com/FP2uMdp.gif"><br><blink><font color="red">Ace: Heatran</blink><br>You may hate me, but don\'t worry, I hate you too.<br>jk. I love you all.');
 	},
 	
 	aerodactylol: function(target, room, user) {
