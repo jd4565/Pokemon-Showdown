@@ -90,6 +90,13 @@ exports.Formats = [
 		banlist: []
 	},
 	{
+		name: "Pokebank Monotype",
+		section: "XY Singles",
+
+		ruleset: ['Pokemon', 'Standard Pokebank', 'Team Preview', 'Same Type Clause', 'Evasion Abilities Clause', 'Sleep Clause Mod'],
+		banlist: []
+	},
+	{
 		name: "Pokebank LC (beta)",
 		section: "XY Singles",
 
