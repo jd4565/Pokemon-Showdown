@@ -1241,6 +1241,7 @@ var commands = exports.commands = {
         	'Don\'t shirk work! Run away and pay! Smiles go for miles!<br></center>');
     },
     
+    wiggly: 'lyricalwigglytuff',
     wigglytuff : 'lyricalwigglytuff',
     lyricalwigglytuff: function(target, room, user) {
         if (!this.canBroadcast()) return;
