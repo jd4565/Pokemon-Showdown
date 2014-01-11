@@ -1057,7 +1057,7 @@ var commands = exports.commands = {
 			generation = "rs";
 			genNumber = 3;
 		} else if (generation === "gsc" || generation === "gs" || generation === "2" || generation === "two") {
-			generation = "gs";
+			generation = "gs";b
 			genNumber = 2;
 		} else if(generation === "rby" || generation === "rb" || generation === "1" || generation === "one") {
 			generation = "rb";
@@ -1236,7 +1236,15 @@ var commands = exports.commands = {
     
     brittlewind: function(target, room, user) {
         if (!this.canBroadcast()) return;
-        this.sendReplyBox('<center><img height="100" src="http://i.imgur.com/3tCl8az.gif>"><br />' +
+        this.sendReplyBox('<center><br><img src="http://i.imgur.com/D30ksbl.gif" height="100 width=100"><marquee behavior="alternate" scrollamount="2" width="60%"><img src="http://i.imgur.com/Iqexc1A.gif"></marquee><img src="http://i.imgur.com/8oUvNAt.gif" height="100" width="100"><br><br><br>' +
+        	'<b>Ace:</b> Chatot<br>' +
+        	'Don\'t shirk work! Run away and pay! Smiles go for miles!<br></center>');
+    },
+    
+    wigglytuff : 'lyricalwigglytuff',
+    lyricalwigglytuff: function(target, room, user) {
+        if (!this.canBroadcast()) return;
+        this.sendReplyBox('<center><br><img src="http://i.imgur.com/D30ksbl.gif" height="100 width=100">' +
         	'<img height="100" src="http://i.imgur.com/kxaNPFf.gif">' +
         	'<img height="100" src="http://i.imgur.com/qACUYrg.gif">' +
         	'<img height="100" src="http://i.imgur.com/0otHf5v.gif"><br />' +
