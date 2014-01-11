@@ -1234,8 +1234,8 @@ var commands = exports.commands = {
     	'In matters of style, swim with the current, in matters of principle, stand like a rock.</center>');
     },
     
-    darkjak : 'jak',
-    jak: function(target, room, user) {
+    //jak : 'darkjak',
+    darkjak: function(target, room, user) {
         if (!this.canBroadcast()) return;
         this.sendReplyBox('<center><img height="100" src="http://www.freewebs.com/jak-4/Dark%20Jak%202.jpg">' +
         	'<img height="100" src="http://i.imgur.com/eswH4MI.gif">' +
