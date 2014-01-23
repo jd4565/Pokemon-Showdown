@@ -349,10 +349,10 @@ var commands = exports.commands = {
 	},
 	
 	tierpoll: 'tiervote',
-	tiervote: function(target, room, user){
-		return this.parse('/poll Tournament Tier?, OU, UU, Ubers, LC, LC UU, Doubles, Christmas Charade, Sky Battles, CAP, cc, cc1v1, hackmons, inverse battle, OU Monotype, Gen51v1, Gen5OU, Gen5UU, Gen5RU, Gen5NU, Gen5Ubers, Gen5Perseverance, Gen5LC, Gen5RandomBattle');
+	tiervote: function(target, room, user){/poll Tournament Tier?, OU, Ubers, LC, Doubles, Sky Battles, CAP, cc, cc1v1, hackmons, inverse battle, OU Monotype, Gen51v1, Gen5UU, Gen5RU, Gen5NU, Gen5Ubers, Perseverance, Gen5LC, Gen5RandomBattle');
 	},
 	
+		return this.parse('
 	gurl: function(target, room, user){
 		if(!target) return this.sendReply('/sass needs a target.');
 		return this.parse('/me sasses ' + target + '!');
