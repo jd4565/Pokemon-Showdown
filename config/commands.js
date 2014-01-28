@@ -1848,6 +1848,12 @@ var commands = exports.commands = {
 		this.sendReplyBox('<center><img width="110" height="110" src="http://www.gamezombie.tv/wp-content/uploads/2013/10/Bulbasaur-1.png"><img src="http://i.imgur.com/qHnpJfN.png"><img width="125" height="110" src="http://willytpokemon.webs.com/photos/My-Favorite-Pokemon-Pictures/Jolteon.gif"><br /><center><b>Ace: </b>Jolteon</center><br /><center><b>Catchphrase: </b>Hula hoopin\' to the max</center>');
 	},
 	
+	championeclipse: 'eclipse'
+	eclipse: function(target, room, user) {
+	         if (!this.canBroadcast()) return;
+	         this.sendReplyBox('<b><center><img src="http://i.imgur.com/XIvHV69.gif" width="200" length="150"><br><img src="http://i.imgur.com/Xj1Sxvy.gif"><img src="http://i.imgur.com/xQdxMSp.png" width="200" length="150"><font color="black"><br><blink>Ace: </blink></font><font color="darkblue">Garchomp<br></font><u><i><font color="lightblue">Don\'t Gible Up!');
+	},
+	
 	cookies: 'sirecookies',
 	sircookies: function(target, room, user) {
 		if (!this.canBroadcast()) return;
