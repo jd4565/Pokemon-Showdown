@@ -1257,7 +1257,7 @@ var commands = exports.commands = {
                 '<img src="http://i.imgur.com/oV29Ffb.png">' +
                 '<img src="http://i.imgur.com/PLhgZxL.gif" width="125" height="125"><br />' +
                 '<b>Ace:</b> My &<br />' +
-                'becuz im shit</center>');
+                'becuz i love cosy</center>');
     },
 	
 
