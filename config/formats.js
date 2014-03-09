@@ -373,20 +373,28 @@ exports.Formats = [
 		banlist: ['Uber', 'Soul Dew', 'Gengarite', 'Kangaskhanite', 'Lucarionite']
 	},
 	{
- 		name: "Perseverance",
- 		section: "Other Metagames",
- 
- 		defaultLevel: 100,
- 		onFaint: function(pokemon) {
- 				var name = pokemon.side.name;
- 				var winner = '';
- 				if (pokemon.side.id === 'p1') {
- 					winner = 'p2';
- 				} else {
- 					winner = 'p1';
- 				}
- 				pokemon.battle.win(winner);
- 	},
+		name: "Point Score",
+		section: "Other Metagames",
+
+		ruleset: ['Pokemon', 'Standard', 'Evasion Abilities Clause', 'Team Preview', 'Point System'],
+		banlists: ['Drizzle ++ Swift Swim', 'Soul Dew', 'Arceus', 'Shadow Tag']
+	},
+	{
+		name: "Perseverance",
+		section: "Other Metagames",
+
+		banlists: ['Shuckle', 'Soul Dew', 'Focus Sash'],
+		onFaint: function(pokemon) {
+				var name = pokemon.side.name;
+				var winner = '';
+				if (pokemon.side.id === 'p1') {
+					winner = 'p2';
+				} else {
+					winner = 'p1';
+				}
+				pokemon.battle.win(winner);
+
+		},
 	{
 		name: "CAP",
 		section: "Other Metagames",
