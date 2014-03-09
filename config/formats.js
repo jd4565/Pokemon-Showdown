@@ -373,29 +373,6 @@ exports.Formats = [
 		banlist: ['Uber', 'Soul Dew', 'Gengarite', 'Kangaskhanite', 'Lucarionite']
 	},
 	{
-		name: "Point Score",
-		section: "Other Metagames",
-
-		ruleset: ['Pokemon', 'Standard', 'Evasion Abilities Clause', 'Team Preview', 'Point System'],
-		banlists: ['Drizzle ++ Swift Swim', 'Soul Dew', 'Arceus', 'Shadow Tag']
-	},
-	{
-		name: "Perseverance",
-		section: "Other Metagames",
-
-		banlists: ['Shuckle', 'Soul Dew', 'Focus Sash'],
-		onFaint: function(pokemon) {
-				var name = pokemon.side.name;
-				var winner = '';
-				if (pokemon.side.id === 'p1') {
-					winner = 'p2';
-				} else {
-					winner = 'p1';
-				}
-				pokemon.battle.win(winner);
-
-	},
-	{
 		name: "CAP",
 		section: "Other Metagames",
 
@@ -675,7 +652,34 @@ exports.Formats = [
 		// no restrictions, for serious (other than team preview)
 		ruleset: ['Team Preview']
 	},
+	{
+		name: "[Gen 5] Point Score",
+		section: "BW2 Singles",
 
+		mod: 'gen5',
+		ruleset: ['Pokemon', 'Standard', 'Evasion Abilities Clause', 'Team Preview', 'Point System'],
+		banlists: ['Drizzle ++ Swift Swim', 'Soul Dew', 'Arceus', 'Shadow Tag']
+	},
+	{
+		name: "[Gen 5] Perseverance",
+		section: "BW2 Singles",
+
+		mod: 'gen5',
+		defaultLevel: 100,
+		onFaint: function(pokemon) {
+				var name = pokemon.side.name;
+				var winner = '';
+				if (pokemon.side.id === 'p1') {
+					winner = 'p2';
+				} else {
+					winner = 'p1';
+				}
+				pokemon.battle.win(winner);
+
+		},
+		ruleset: ['Pokemon', 'Standard', 'Evasion Abilities Clause', 'Team Preview'],
+		banlist: ['Uber', 'Drizzle ++ Swift Swim', 'Soul Dew', 'Shuckle', 'Sableye']
+	},
 	// BW2 Doubles
 	///////////////////////////////////////////////////////////////////
 
