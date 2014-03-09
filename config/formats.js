@@ -394,7 +394,7 @@ exports.Formats = [
 				}
 				pokemon.battle.win(winner);
 
-		},
+	},
 	{
 		name: "CAP",
 		section: "Other Metagames",
