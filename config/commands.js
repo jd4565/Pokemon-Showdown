@@ -1254,6 +1254,15 @@ var commands = exports.commands = {
 	* Trainer Cards                        *
 	***************************************/
 
+	tael: function(target, room, user) {
+    	if (!this.canBroadcast()) return;
+    	this.sendReplyBox('<center><img src="http://i.imgur.com/pGk94ij.png" width="164" height="150">' +
+    		'<img src="http://i.imgur.com/Y2DTSuL.gif">' + 
+    		'<img src="http://i.imgur.com/EGfRXQQ.png" width="176" height="150"><br />' +
+    		'<b>Ace:</b> Flygon<br />' +
+    		'I don\'t give a flying fuck.</center>');
+	 },
+	
 	ticken: function(target, room, user) {
         if (!this.canBroadcast()) return;
         this.sendReplyBox('<center><img src="http://i.imgur.com/B0gfhrg.png" width="144" height="100">' +
