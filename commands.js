@@ -2194,13 +2194,12 @@ var commands = exports.commands = {
 	},
 
 	modlog: function(target, room, user, connection) {
-		if (!this.can('modlog')) return false;
 		var lines = 0;
 		// Specific case for modlog command. Room can be indicated with a comma, lines go after the comma.
 		// Otherwise, the text is defaulted to text search in current room's modlog.
 		var roomId = room.id;
 		var roomLogs = {};
-		var fs = require('fs');
+
 		if (target.indexOf(',') > -1) {
 			var targets = target.split(',');
 			target = targets[1].trim();
@@ -2219,6 +2218,7 @@ var commands = exports.commands = {
 		var filename = '';
 		var command = '';
 		if (roomId === 'all' && wordSearch) {
+			if (!this.can('modlog')) return;
 			roomNames = 'all rooms';
 			// Get a list of all the rooms
 			var fileList = fs.readdirSync('logs/modlog');
@@ -2226,7 +2226,7 @@ var commands = exports.commands = {
 				filename += 'logs/modlog/' + fileList[i] + ' ';
 			}
 		} else {
-			roomId = room.id;
+			if (!this.can('modlog', null, Rooms.get(roomId))) return;
 			roomNames = 'the room ' + roomId;
 			filename = 'logs/modlog/modlog_' + roomId + '.txt';
 		}
@@ -2452,6 +2452,10 @@ var commands = exports.commands = {
 			Sockets.workers[i].kill();
 		}
 
+		if (!room.destroyLog) {
+			process.exit();
+			return;
+		}
 		room.destroyLog(function() {
 			room.logEntry(user.name + ' used /kill');
 		}, function() {
@@ -2580,7 +2584,7 @@ var commands = exports.commands = {
 			this.sendReply('Loading memory usage, this might take a while.');
 		}
 		if (target === 'all' || target === 'rooms' || target === 'room') {
-			this.sendReply('Calcualting Room size...');
+			this.sendReply('Calculating Room size...');
 			var roomSize = ResourceMonitor.sizeOfObject(Rooms);
 			this.sendReply("Rooms are using " + roomSize + " bytes of memory.");
 		}
@@ -2795,15 +2799,30 @@ var commands = exports.commands = {
 	timer: function(target, room, user) {
 		target = toId(target);
 		if (room.requestKickInactive) {
-			if (target === 'off' || target === 'stop') {
+			if (target === 'off' || target === 'false' || target === 'stop') {
 				room.stopKickInactive(user, user.can('timer'));
-			} else if (target === 'on' || !target) {
+			} else if (target === 'on' || target === 'true' || !target) {
 				room.requestKickInactive(user, user.can('timer'));
 			} else {
 				this.sendReply("'"+target+"' is not a recognized timer state.");
 			}
 		} else {
 			this.sendReply('You can only set the timer from inside a room.');
+		}
+	},
+
+	autotimer: 'forcetimer',
+	forcetimer: function(target, room, user) {
+		target = toId(target);
+		if (!this.can('autotimer')) return;
+		if (target === 'off' || target === 'false' || target === 'stop') {
+			config.forcetimer = false;
+			this.addModCommand("Forcetimer is now OFF: The timer is now opt-in. (set by "+user.name+")");
+		} else if (target === 'on' || target === 'true' || !target) {
+			config.forcetimer = true;
+			this.addModCommand("Forcetimer is now ON: All battles will be timed. (set by "+user.name+")");
+		} else {
+			this.sendReply("'"+target+"' is not a recognized forcetimer setting.");
 		}
 	},
 

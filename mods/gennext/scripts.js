@@ -1,6 +1,4 @@
 exports.BattleScripts = {
-	inherit: 'gen5',
-	gen: 5,
 	init: function() {
 		this.modData('Pokedex', 'cherrimsunshine').types = ['Grass', 'Fire'];
 
@@ -13,9 +11,6 @@ exports.BattleScripts = {
 
 		// Masquerain also gets Surf because we want it to be viable
 		this.modData('Learnsets', 'masquerain').learnset.surf = ['5M'];
-
-		// Shuckle gets Leech Seed
-		this.modData('Learnsets', 'shuckle').learnset.leechseed = ['5L100'];
 
 		// Roserade gets Sludge
 		this.modData('Learnsets', 'roserade').learnset.sludge = ['5L100'];
@@ -64,9 +59,6 @@ exports.BattleScripts = {
 		// Aipom: eggSketch! :D
 		this.modData('Learnsets', 'aipom').learnset.sketch = ['5E'];
 
-		// Azumarill: free Belly Drum
-		this.modData('Learnsets', 'azumarill').learnset.bellydrum = ['5L100'];
-
 		// Spinda: free Superpower
 		this.modData('Learnsets', 'spinda').learnset.superpower = ['5L100'];
 
@@ -112,11 +104,9 @@ exports.BattleScripts = {
 		this.modData('Pokedex', 'mismagius').abilities['1'] = 'Cursed Body';
 		this.modData('Pokedex', 'cryogonal').abilities['1'] = 'Ice Body';
 
-		// Every DW ability that isn't Shadow Tag becomes released
+		// Every DW ability becomes released
 		for (var i in this.data.FormatsData) {
-			if (i !== 'chandelure' && i !== 'gothitelle') {
-				this.modData('FormatsData', i).dreamWorldRelease = true;
-			}
+			this.modData('FormatsData', i).dreamWorldRelease = true;
 		}
 	}
 };

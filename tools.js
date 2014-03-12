@@ -628,6 +628,8 @@ module.exports = (function () {
 	};
 
 	Tools.prototype.packTeam = function(team) {
+		if (!team) return '';
+
 		var buf = '';
 
 		for (var i=0; i<team.length; i++) {
@@ -638,8 +640,8 @@ module.exports = (function () {
 			buf += (set.name || set.species);
 
 			// species
-			var id = toId(set.species);
-			buf += '|' + (toId(set.name) === id ? '' : id);
+			var id = toId(set.species || set.name);
+			buf += '|' + (toId(set.name || set.species) === id ? '' : id);
 
 			// item
 			buf += '|' + toId(set.item);
@@ -648,12 +650,16 @@ module.exports = (function () {
 			var template = moddedTools.base.getTemplate(set.species || set.name);
 			var abilities = template.abilities;
 			id = toId(set.ability);
-			if (id == toId(abilities['0'])) {
-				buf += '|';
-			} else if (id === toId(abilities['1'])) {
-				buf += '|1';
-			} else if (id === toId(abilities['H'])) {
-				buf += '|H';
+			if (abilities) {
+				if (id == toId(abilities['0'])) {
+					buf += '|';
+				} else if (id === toId(abilities['1'])) {
+					buf += '|1';
+				} else if (id === toId(abilities['H'])) {
+					buf += '|H';
+				} else {
+					buf += '|' + id;
+				}
 			} else {
 				buf += '|' + id;
 			}
@@ -700,6 +706,13 @@ module.exports = (function () {
 				buf += '|'
 			}
 
+			// level
+			if (set.level && set.level != 100) {
+				buf += '|'+set.level;
+			} else {
+				buf += '|'
+			}
+
 			// happiness
 			if (set.happiness !== undefined && set.happiness !== 255) {
 				buf += '|'+set.happiness;
@@ -712,47 +725,57 @@ module.exports = (function () {
 	};
 
 	Tools.prototype.fastUnpackTeam = function(buf) {
+		if (!buf) return null;
+
 		var team = [];
 		var i = 0, j = 0;
 
-		while (true) {
+		// limit to 24
+		for (var count=0; count<24; count++) {
 			var set = {};
 			team.push(set);
 
 			// name
 			j = buf.indexOf('|', i);
+			if (j < 0) return;
 			set.name = buf.substring(i, j);
 			i = j+1;
 
 			// species
 			j = buf.indexOf('|', i);
+			if (j < 0) return;
 			set.species = buf.substring(i, j) || set.name;
 			i = j+1;
 
 			// item
 			j = buf.indexOf('|', i);
+			if (j < 0) return;
 			set.item = buf.substring(i, j);
 			i = j+1;
 
 			// ability
 			j = buf.indexOf('|', i);
+			if (j < 0) return;
 			var ability = buf.substring(i, j);
 			var template = moddedTools.base.getTemplate(set.species);
-			set.ability = (ability in {'':1, 0:1, 1:1, H:1} ? template.abilities[ability||'0'] : ability);
+			set.ability = (template.abilities && ability in {'':1, 0:1, 1:1, H:1} ? template.abilities[ability||'0'] : ability);
 			i = j+1;
 
 			// moves
 			j = buf.indexOf('|', i);
+			if (j < 0) return;
 			set.moves = buf.substring(i, j).split(',');
 			i = j+1;
 
 			// nature
 			j = buf.indexOf('|', i);
+			if (j < 0) return;
 			set.nature = buf.substring(i, j);
 			i = j+1;
 
 			// evs
 			j = buf.indexOf('|', i);
+			if (j < 0) return;
 			if (j !== i) {
 				var evs = buf.substring(i, j).split(',');
 				set.evs = {
@@ -768,27 +791,36 @@ module.exports = (function () {
 
 			// gender
 			j = buf.indexOf('|', i);
+			if (j < 0) return;
 			if (i !== j) set.gender = buf.substring(i, j);
 			i = j+1;
 
 			// ivs
 			j = buf.indexOf('|', i);
+			if (j < 0) return;
 			if (j !== i) {
 				var ivs = buf.substring(i, j).split(',');
 				set.ivs = {
-					hp: ivs[0]==='' ? 31 : Number(ivs[0]),
-					atk: ivs[1]==='' ? 31 : Number(ivs[1]),
-					def: ivs[2]==='' ? 31 : Number(ivs[2]),
-					spa: ivs[3]==='' ? 31 : Number(ivs[3]),
-					spd: ivs[4]==='' ? 31 : Number(ivs[4]),
-					spe: ivs[5]==='' ? 31 : Number(ivs[5])
+					hp: ivs[0]==='' ? 31 : Number(ivs[0]) || 0,
+					atk: ivs[1]==='' ? 31 : Number(ivs[1]) || 0,
+					def: ivs[2]==='' ? 31 : Number(ivs[2]) || 0,
+					spa: ivs[3]==='' ? 31 : Number(ivs[3]) || 0,
+					spd: ivs[4]==='' ? 31 : Number(ivs[4]) || 0,
+					spe: ivs[5]==='' ? 31 : Number(ivs[5]) || 0
 				};
 			}
 			i = j+1;
 
 			// shiny
 			j = buf.indexOf('|', i);
+			if (j < 0) return;
 			if (i !== j) set.shiny = true;
+			i = j+1;
+
+			// level
+			j = buf.indexOf('|', i);
+			if (j < 0) return;
+			if (i !== j) set.level = parseInt(buf.substring(i, j), 10);
 			i = j+1;
 
 			// happiness
