@@ -1671,7 +1671,7 @@ var commands = exports.commands = {
    	serena : 'serena Hikaru', 
    	serena: function(target, room, user) {
         	if (!this.canBroadcast()) return;
-        	this.sendReplyBox('<center><img height="120" src="http://i.imgur.com/VUG3GC0.jpg">' +
+        	this.sendReplyBox('<center><img height="120" src="http://images.comunidades.net/rte/rteennews/190.jpg">' +
         		'<img src=http://i1365.photobucket.com/albums/r752/LynnHikaru/serenatext_zps50a3374a.png" height="100">' +
         		'<img src="http://i1365.photobucket.com/albums/r752/LynnHikaru/Gg3_zps4f62973b.jpg" height="100"><br />' +
         		'<b>Ace: </b>Gardevoir<br />' +
