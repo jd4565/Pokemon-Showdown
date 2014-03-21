@@ -1668,7 +1668,7 @@ var commands = exports.commands = {
     },
     	
     
-   	serena : 'serena', 
+   	serena : 'serena Hikaru', 
    	serena: function(target, room, user) {
         	if (!this.canBroadcast()) return;
         	this.sendReplyBox('<center><img height="120" src="http://i.imgur.com/VUG3GC0.jpg">' +
@@ -1701,8 +1701,7 @@ var commands = exports.commands = {
     },
             
    	austos : 'austos',
-   	austos : 'austos',
-   	vale: function(target, room, user) {
+   	austos: function(target, room, user) {
         	if (!this.canBroadcast()) return;
         	this.sendReplyBox('<center><img height="120" src="http://img1.wikia.nocookie.net/__cb20131110221203/es.pokemon/images/1/1c/Greninja_XY.gif">' +
         		'<img src="http://209.190.33.194/images/812/812731df1c4658fb3f444026cd73eb0b5b85a43d.png" height="100">' +
