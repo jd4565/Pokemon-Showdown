@@ -1668,14 +1668,14 @@ var commands = exports.commands = {
     },
     	
     
-   	shizuka : 'shizuka', 
-   	shizuka: function(target, room, user) {
+   	serena : 'serena', 
+   	serena: function(target, room, user) {
         	if (!this.canBroadcast()) return;
         	this.sendReplyBox('<center><img height="120" src="http://i.imgur.com/VUG3GC0.jpg">' +
-        		'<img src="http://i1365.photobucket.com/albums/r752/LynnHikaru/Shizukaname_zpsff03f985.png" height="100">' +
-        		'<img src="http://i1365.photobucket.com/albums/r752/LynnHikaru/Gardevoir58_zps3aa0eea2.jpg" height="100"><br />' +
-        		'<b>Ace: </b>Gardevoir and Gallade<br />' +
-        		'<b>Catchphrase: </b>Mind, Skill, tranquility.</center>');
+        		'<img src=http://i1365.photobucket.com/albums/r752/LynnHikaru/serenatext_zps50a3374a.png" height="100">' +
+        		'<img src="http://i1365.photobucket.com/albums/r752/LynnHikaru/Gg3_zps4f62973b.jpg" height="100"><br />' +
+        		'<b>Ace: </b>Gardevoir<br />' +
+        		'<b>Catchphrase: </b>Maybe my fairy tale has a different ending than I dreamed it would. But thats OK.</center>');
     },
         	
     
@@ -1696,6 +1696,17 @@ var commands = exports.commands = {
         	this.sendReplyBox('<center><img height="120" src="http://fc07.deviantart.net/fs70/f/2010/071/a/8/Scyther_by_Xous54.png">' +
         		'<img src="http://static1.glowtxt.com/data1/c/e/0/ce0a4c2b5bd3ad25c6579826f89d240e5f7b9fc7da39a3ee5e6b4b0d3255bfef95601890afd80709da39a3ee5e6b4b0d3255bfef95601890afd80709a33320cb7fd87eef40a9e6023a7a26bc.png" height="100">' +
         		'<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvp4U2ImcI4VEcpJqpPq5PWwMKGLET8RkYkLL_eETMhQ9Sh7UQQ" height="100"><br />' +
+        		'<b>Ace: </b>Togekiss and Scyther<br />' +
+        		'<b>Catchphrase: </b>The Cracks cant support you forever, theyll crack and when they do the consequences can be unforseen.</center>');
+    },
+            
+   	austos : 'austos',
+   	austos : 'austos',
+   	vale: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://img1.wikia.nocookie.net/__cb20131110221203/es.pokemon/images/1/1c/Greninja_XY.gif">' +
+        		'<img src="http://209.190.33.194/images/812/812731df1c4658fb3f444026cd73eb0b5b85a43d.png" height="100">' +
+        		'<img src="http://cdn.bulbagarden.net/upload/thumb/6/6d/Black_2_White_2_N.png/200px-Black_2_White_2_N.png" height="100"><br />' +
         		'<b>Ace: </b>Togekiss and Scyther<br />' +
         		'<b>Catchphrase: </b>The Cracks cant support you forever, theyll crack and when they do the consequences can be unforseen.</center>');
     },
