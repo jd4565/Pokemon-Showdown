@@ -1719,6 +1719,16 @@ var commands = exports.commands = {
         		'<b>Ace: </b>Talonflame<br />' +
         		'<b>Catchphrase: </b>Dah Hax Is Real $_$.</center>');
     },
+                
+   	mihawk : 'mihawk',
+   	mihawk: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://th09.deviantart.net/fs70/200H/f/2011/203/b/2/mihawk_by_swiftcutz-d41amyy.jpg">' +
+        		'<img src="http://i.imgur.com/3HvC1qe.png" height="100">' +
+        		'<img src="http://th03.deviantart.net/fs71/200H/f/2011/221/f/e/dracule_mihawk_by_dianaluc-d46165h.png" height="100"><br />' +
+        		'<b>Ace: </b>Garchomp<br />' +
+        		'<b>Catchphrase: </b>In all things there is balance, for balance is power. But in power alone there is no balance.</center>');
+    },
     
     commands: 'help',
 	h: 'help',
