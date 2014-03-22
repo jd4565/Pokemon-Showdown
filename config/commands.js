@@ -1646,6 +1646,15 @@ var commands = exports.commands = {
 			'Quote: Its never truly over until one loses.<br \>' +
 			'<img src="http://img.pokemondb.net/sprites/black-white/anim/normal/toxicroak.gif">')
 	},
+	
+	falco: 'Falco',
+	falco: function(target, room, user) {
+		if (!this.canBroadcast()) return;
+		this.sendReplyBox('frontier: Falco<br \>' +
+			'Ace: Gengar <br \>' +
+			'Quote: Integrity first, Service before self, Excellence in all we do.<br \>' +
+			'<img src="http://24.media.tumblr.com/a056fe9ac8f8ee1dddac979c07b3f8d1/tumblr_mfq5qx4aah1r84emlo1_500.gif">')
+	},
 
 	kolotos: 'kolotos',
 	kolotos: function(target, room, user) {
