@@ -1716,8 +1716,8 @@ var commands = exports.commands = {
         	this.sendReplyBox('<center><img height="120" src="http://fc03.deviantart.net/fs71/f/2013/259/0/9/talonflame_sprite_by_natsu714-d6mjxdb.png">' +
         		'<img src="http://i.imgur.com/o1uZXBE.gif" height="100">' +
         		'<img src="http://31.media.tumblr.com/0acee0675cc7e232cd9a3777f16daf85/tumblr_mqqhioUzLQ1rs0nhyo1_250.gif" height="100"><br />' +
-        		'<b>Ace: </b>Greninja<br />' +
-        		'<b>Catchphrase: </b>Perfection requires Adaptation.</center>');
+        		'<b>Ace: </b>Talonflame<br />' +
+        		'<b>Catchphrase: </b>Dah Hax Is Real $_$.</center>');
     },
     
     commands: 'help',
