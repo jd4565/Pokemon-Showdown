@@ -1620,15 +1620,6 @@ var commands = exports.commands = {
 		this.sendReply('|raw|<center><img src="http://i.imgur.com/yMNJ2xK.png"></center>');
 	},
 
-	missing1: 'missing1',
-	missing1: function(target, room, user) {
-		if (!this.canBroadcast()) return;
-		this.sendReplyBox('Professor: Missing1<br \>' +
-			'Ace: Arcanine<br \>' +
-			'Quote: None as of yet.<br \>' +
-			'<img src="http://img.pokemondb.net/sprites/black-white/anim/normal/arcanine.gif">')
-	},
-
 	aaron: 'Aaron',
 	aaron: function(target, room, user) {
 		if (!this.canBroadcast()) return;
@@ -1747,6 +1738,16 @@ var commands = exports.commands = {
         		'<img src="http://th03.deviantart.net/fs71/200H/f/2011/221/f/e/dracule_mihawk_by_dianaluc-d46165h.png" height="100"><br />' +
         		'<b>Ace: </b>Garchomp<br />' +
         		'<b>Catchphrase: </b>In all things there is balance, for balance is power. But in power alone there is no balance.</center>');
+    },
+                   
+   	missing1 : 'missing1',
+   	missing1: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://c2.atwiki.asia/livia/2/2014/0213/6536fe95b080435c52b5.jpg">' +
+        		'<img src="http://i.imgur.com/weT5dVU.png" height="100">' +
+        		'<img src="http://www.ycy8.net/wp-content/uploads/2013/09/0117.jpg" height="100"><br />' +
+        		'<b>Ace: </b>Arcanine and Ninetales<br />' +
+        		'<b>Catchphrase: </b>When life gives me lemons i dont make lemonade, I make lemon grenades..</center>');
     },
     
     commands: 'help',
