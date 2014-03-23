@@ -1671,7 +1671,7 @@ var commands = exports.commands = {
         	if (!this.canBroadcast()) return;
         	this.sendReplyBox('<center><img height="90" src="http://img3.wikia.nocookie.net/__cb20130816174802/rwby/images/0/00/RubyGIF1.gif">' +
         		'<img src="http://i.imgur.com/QpvpXsn.gif">' +
-        		'<img src="http://25.media.tumblr.com/bc0429687fd3a892f4ea7b923c838800/tumblr_mqmdvrQECS1qfphyto2_250.gif" height="100"><br />' +
+        		'<img src="http://25.media.tumblr.com/78aa67b7687f1c0b0a59251ab8f3d937/tumblr_mv5rnwZDrw1r1iy9po3_500.gif" height="100"><br />' +
         		'<b>Ace: </b>Charizard<br />' +
         		'<b>Catchphrase: </b>I dont need someone to help me grow up I drink milk.</center>');
     },
@@ -1725,6 +1725,16 @@ var commands = exports.commands = {
         	this.sendReplyBox('<center><img height="120" src="http://fc03.deviantart.net/fs71/f/2013/259/0/9/talonflame_sprite_by_natsu714-d6mjxdb.png">' +
         		'<img src="http://i.imgur.com/o1uZXBE.gif" height="100">' +
         		'<img src="http://31.media.tumblr.com/0acee0675cc7e232cd9a3777f16daf85/tumblr_mqqhioUzLQ1rs0nhyo1_250.gif" height="100"><br />' +
+        		'<b>Ace: </b>Talonflame<br />' +
+        		'<b>Catchphrase: </b>Dah Hax Is Real $_$.</center>');
+    },
+                
+   	levi : 'levi',
+   	levi: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="https://lh5.googleusercontent.com/-4JgQF4DV3E0/Uy4_5Eqe3xI/AAAAAAAAALo/5btSDAfTGSw/w558-h577-no/Sigylph_Pic.png">' +
+        		'<img src="https://lh4.googleusercontent.com/-drhrLrf9K_g/Uy49z2vaNuI/AAAAAAAAALU/S0QJUpyt3Ho/w1043-h489-no/Levi_Name.png" height="100">' +
+        		'<img src="https://lh5.googleusercontent.com/-8aEFS4AwMFE/Uy49yjeO4bI/AAAAAAAAALM/mqACw-2ro-Y/w866-h577-no/Levi_Team.png" height="100"><br />' +
         		'<b>Ace: </b>Talonflame<br />' +
         		'<b>Catchphrase: </b>Dah Hax Is Real $_$.</center>');
     },
