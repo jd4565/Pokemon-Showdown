@@ -1623,7 +1623,7 @@ var commands = exports.commands = {
 	missing1: 'missing1',
 	missing1: function(target, room, user) {
 		if (!this.canBroadcast()) return;
-		this.sendReplyBox('Gym Leader: Missing1<br \>' +
+		this.sendReplyBox('Professor: Missing1<br \>' +
 			'Ace: Arcanine<br \>' +
 			'Quote: None as of yet.<br \>' +
 			'<img src="http://img.pokemondb.net/sprites/black-white/anim/normal/arcanine.gif">')
@@ -1735,8 +1735,8 @@ var commands = exports.commands = {
         	this.sendReplyBox('<center><img height="120" src="https://lh5.googleusercontent.com/-4JgQF4DV3E0/Uy4_5Eqe3xI/AAAAAAAAALo/5btSDAfTGSw/w558-h577-no/Sigylph_Pic.png">' +
         		'<img src="https://lh4.googleusercontent.com/-drhrLrf9K_g/Uy49z2vaNuI/AAAAAAAAALU/S0QJUpyt3Ho/w1043-h489-no/Levi_Name.png" height="100">' +
         		'<img src="https://lh5.googleusercontent.com/-8aEFS4AwMFE/Uy49yjeO4bI/AAAAAAAAALM/mqACw-2ro-Y/w866-h577-no/Levi_Team.png" height="100"><br />' +
-        		'<b>Ace: </b>Talonflame<br />' +
-        		'<b>Catchphrase: </b>Dah Hax Is Real $_$.</center>');
+        		'<b>Ace: </b>Sigilyph<br />' +
+        		'<b>Catchphrase: </b>Savour your loses, for every defeat, every heartbreak, every loss, contains its own lesson on how to improve your performance the next time.</center>');
     },
                 
    	mihawk : 'mihawk',
