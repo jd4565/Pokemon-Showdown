@@ -12,53 +12,51 @@
  * @license MIT license
  */
 var bank = exports.bank = {
-			bucks: function(uid, amount, take) {
-
- 
-						var data = fs.readFileSync('config/money.csv','utf8')
-				var match = false;
-				var money = 0;
-				var row = (''+data).split("\n");
-				var line = '';
-				for (var i = row.length; i > -1; i--) {
-					if (!row[i]) continue;
-					var parts = row[i].split(",");
-					var userid = toUserid(parts[0]);
-					if (uid.userid == userid) {
-						var x = Number(parts[1]);
-						var money = x;
-						match = true;
-						if (match === true) {
-							line = line + row[i];
-							break;
-						}
-					}
-				}
-				uid.money = money;
-				if (take === true){if (amount <= uid.money){
-				uid.money = uid.money - amount; take = false;}
-				else return false;
-				}
-				else {uid.money = uid.money + amount;}
+	bucks: function(uid, amount, take) {
+		var data = fs.readFileSync('config/money.csv','utf8')
+		var match = false;
+		var money = 0;
+		var row = (''+data).split("\n");
+		var line = '';
+		for (var i = row.length; i > -1; i--) {
+			if (!row[i]) continue;
+			var parts = row[i].split(",");
+			var userid = toUserid(parts[0]);
+			if (uid.userid == userid) {
+				var x = Number(parts[1]);
+				var money = x;
+				match = true;
 				if (match === true) {
-					var re = new RegExp(line,"g");
-					fs.readFile('config/money.csv', 'utf8', function (err,data) {
-					if (err) {
-						return console.log(err);
-					}
-					var result = data.replace(re, uid.userid+','+uid.money);
-					fs.writeFile('config/money.csv', result, 'utf8', function (err) {
-						if (err) return console.log(err);
-					});
-					});
-				} else {
-					var log = fs.createWriteStream('config/money.csv', {'flags': 'a'});
-					log.write("\n"+uid.userid+','+uid.money);
+					line = line + row[i];
+					break;
 				}
-				return true;
-				},
+			}
+		}
+		uid.money = money;
+		if (take === true){if (amount <= uid.money){
+		uid.money = uid.money - amount; take = false;}
+		else return false;
+		}
+		else {uid.money = uid.money + amount;}
+		if (match === true) {
+			var re = new RegExp(line,"g");
+			fs.readFile('config/money.csv', 'utf8', function (err,data) {
+			if (err) {
+				return console.log(err);
+			}
+			var result = data.replace(re, uid.userid+','+uid.money);
+			fs.writeFile('config/money.csv', result, 'utf8', function (err) {
+				if (err) return console.log(err);
+			});
+			});
+		} else {
+			var log = fs.createWriteStream('config/money.csv', {'flags': 'a'});
+			log.write("\n"+uid.userid+','+uid.money);
+		}
+		return true;
+		},
 				
-	    coins: function(uid, amount, take) {
+	coins: function(uid, amount, take) {
 
 	    var lore = fs.readFileSync('config/coins.csv','utf8')
                 var match = false;
@@ -1676,58 +1674,94 @@ var commands = exports.commands = {
         }
     },
 
-    afk: 'away',
-        away: function(target, room, user, connection) {
-                if (!this.can('away')) return false;
+    eating: 'away',
+	gaming: 'away',
+    sleep: 'away',
+    work: 'away',
+    working: 'away',
+    sleeping: 'away',
+    busy: 'away',    
+	afk: 'away',
+	away: function(target, room, user, connection, cmd) {
+		if (!this.can('away')) return false;
+		var t = 'Away';
+		switch (cmd) {
+			case 'busy':
+			t = 'Busy';
+			break;
+			case 'sleeping':
+			t = 'Sleeping';
+			break;
+			case 'sleep':
+			t = 'Sleeping';
+			break;
+			case 'gaming':
+			t = 'Gaming';
+			break;
+			case 'working':
+			t = 'Working';
+			break;
+			case 'work':
+			t = 'Working';
+			break;
+			case 'eating':
+			t = 'Eating';
+			break;
+			default:
+			t = 'Away'
+			break;
+		}
 
-                if (!user.isAway) {
-                        user.originalName = user.name;
-                        var awayName = user.name + ' - Away';
-                        //delete the user object with the new name in case it exists - if it does it can cause issues with forceRename
-                        delete Users.get(awayName);
-                        user.forceRename(awayName, undefined, true);
-                        
-                        if (user.isStaff) this.add('|raw|-- <b><font color="#4F86F7">' + user.originalName +'</font color></b> is now away. '+ (target ? " (" + target + ")" : ""));
+		if (user.name.length > 18) return this.sendReply('Your username exceeds the length limit.');
 
-                        user.isAway = true;
-                }
-                else {
-                        return this.sendReply('You are already set as away, type /back if you are now back');
-                }
+		if (!user.isAway) {
+			user.originalName = user.name;
+			var awayName = user.name + ' - '+t;
+			//delete the user object with the new name in case it exists - if it does it can cause issues with forceRename
+			delete Users.get(awayName);
+			user.forceRename(awayName, undefined, true);
 
-                user.updateIdentity();
-        },
+			if (user.isStaff) this.add('|raw|-- <b><font color="#088cc7">' + user.originalName +'</font color></b> is now '+t.toLowerCase()+'. '+ (target ? " (" + escapeHTML(target) + ")" : ""));
 
-        back: function(target, room, user, connection) {
-                if (!this.can('away')) return false;
+			user.isAway = true;
+		}
+		else {
+			return this.sendReply('You are already set as a form of away, type /back if you are now back.');
+		}
 
-                if (user.isAway) {
-                        if (user.name.slice(-7) !== ' - Away') {
-                                user.isAway = false; 
-                                return this.sendReply('Your name has been left unaltered and no longer marked as away.');
-                        }
+		user.updateIdentity();
+	},
 
-                        var newName = user.originalName;
-                        
-                        //delete the user object with the new name in case it exists - if it does it can cause issues with forceRename
-                        delete Users.get(newName);
+	back: function(target, room, user, connection) {
+		if (!this.can('away')) return false;
 
-                        user.forceRename(newName, undefined, true);
-                        
-                        //user will be authenticated
-                        user.authenticated = true;
-                        
-                        if (user.isStaff) this.add('|raw|-- <b><font color="#4F86F7">' + newName + '</font color></b> is no longer away');
+		if (user.isAway) {
+			if (user.name === user.originalName) {
+				user.isAway = false; 
+				return this.sendReply('Your name has been left unaltered and no longer marked as away.');
+			}
 
-                        user.originalName = '';
-                        user.isAway = false;
-                }
-                else {
-                        return this.sendReply('You are not set as away');
-                }
+			var newName = user.originalName;
 
-                user.updateIdentity();
-        }, 
+			//delete the user object with the new name in case it exists - if it does it can cause issues with forceRename
+			delete Users.get(newName);
+
+			user.forceRename(newName, undefined, true);
+
+			//user will be authenticated
+			user.authenticated = true;
+
+			if (user.isStaff) this.add('|raw|-- <b><font color="#088cc7">' + newName + '</font color></b> is no longer away.');
+
+			user.originalName = '';
+			user.isAway = false;
+		}
+		else {
+			return this.sendReply('You are not set as away.');
+		}
+
+		user.updateIdentity();
+	}, 
 
 	/*********************************************************
 	 * Moderating: Punishments
@@ -2172,6 +2206,31 @@ var commands = exports.commands = {
 		return '/announce '+target;
 	},
 
+	masspm: 'pmall',
+	pmall: function(target, room, user) {
+		if (!target) return this.parse('/pmall [message] - Sends a PM to every user in a room.');
+		if (!this.can('pmall')) return false;
+
+		var pmName = '~Frost PM';
+
+		for (var i in Users.users) {
+			var message = '|pm|'+pmName+'|'+Users.users[i].getIdentity()+'|'+target;
+			Users.users[i].send(message);
+		}
+	},
+
+	pas: 'pmallstaff',
+	pmallstaff: function(target, room, user) {
+		if (!target) return this.parse('/pmallstaff [message] - Sends a PM to every staff member online.');
+		if (!this.can('pmall')) return false;
+
+		for (var u in Users.users) { 
+			if (Users.users[u].isStaff) {
+				Users.users[u].send('|pm|~Staff PM|'+Users.users[u].group+Users.users[u].name+'|'+target);
+			}
+		}
+	},
+
 	fr: 'forcerename',
 	forcerename: function(target, room, user) {
 		if (!target) return this.parse('/help forcerename');
@@ -2295,15 +2354,19 @@ var commands = exports.commands = {
 		this.logEntry(user.name + ' used /hotpatch ' + target);
 
 		if (target === 'chat' || target === 'commands') {
-
 			try {
 				CommandParser.uncacheTree('./command-parser.js');
 				CommandParser = require('./command-parser.js');
+
+				var runningTournaments = Tournaments.tournaments;
+				CommandParser.uncacheTree('./tournaments/frontend.js');
+				Tournaments = require('./tournaments/frontend.js');
+				Tournaments.tournaments = runningTournaments;
+
 				return this.sendReply('Chat commands have been hot-patched.');
 			} catch (e) {
 				return this.sendReply('Something failed while trying to hotpatch chat: \n' + e.stack);
 			}
-
 		} else if (target === 'frost' || target === 'more') {
 
 			try {
@@ -2312,6 +2375,16 @@ var commands = exports.commands = {
 				return this.sendReply('Frost commands have been hot-patched.');
 			} catch (e) {
 				return this.sendReply('Something failed while trying to hotpatch chat: \n' + e.stack);
+			}
+		} else if (target === 'tournaments') {
+			try {
+				var runningTournaments = Tournaments.tournaments;
+				CommandParser.uncacheTree('./tournaments/frontend.js');
+				Tournaments = require('./tournaments/frontend.js');
+				Tournaments.tournaments = runningTournaments;
+				return this.sendReply("Tournaments have been hot-patched.");
+			} catch (e) {
+				return this.sendReply('Something failed while trying to hotpatch tournaments: \n' + e.stack);
 			}
 
 		} else if (target === 'battles') {
