@@ -1749,6 +1749,16 @@ var commands = exports.commands = {
         		'<b>Ace: </b>Arcanine and Ninetales<br />' +
         		'<b>Catchphrase: </b>When life gives me lemons i dont make lemonade, I make lemon grenades..</center>');
     },
+        
+   	yang : 'yang xiao long', 
+   	yang: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="90" src="http://img1.wikia.nocookie.net/__cb20130912192729/powerlisting/images/d/db/1MAIfha.gif">' +
+        		'<img src="http://i.imgur.com/A9UnCaZ.gif">' +
+        		'<img src="http://31.media.tumblr.com/0522076f7fbca60d7be0d631ce2c0bf1/tumblr_mr5c1oQtCU1rvzdzso1_500.gif" height="100"><br />' +
+        		'<b>Ace: </b>Charizard<br />' +
+        		'<b>Catchphrase: </b>Well that was a thing.</center>');
+    },
     
     commands: 'help',
 	h: 'help',
