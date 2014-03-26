@@ -1750,12 +1750,22 @@ var commands = exports.commands = {
         		'<b>Catchphrase: </b>When life gives me lemons i dont make lemonade, I make lemon grenades..</center>');
     },
         
+   	lovrina : 'lovrina', 
+   	lovrina: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://i.ytimg.com/vi/1numNwohDaw/0.jpg">' +
+        		'<img src=http://i1365.photobucket.com/albums/r752/LynnHikaru/serenatext_zps50a3374a.png" height="100">' +
+        		'<img src="http://i1365.photobucket.com/albums/r752/LynnHikaru/Gg3_zps4f62973b.jpg" height="100"><br />' +
+        		'<b>Ace: </b>Gardevoir<br />' +
+        		'<b>Catchphrase: </b>Maybe my fairy tale has a different ending than I dreamed it would. But thats OK.</center>');
+    },
+        
    	yang : 'yang xiao long', 
    	yang: function(target, room, user) {
         	if (!this.canBroadcast()) return;
         	this.sendReplyBox('<center><img height="90" src="http://img1.wikia.nocookie.net/__cb20130912192729/powerlisting/images/d/db/1MAIfha.gif">' +
-        		'<img src="http://i.imgur.com/A9UnCaZ.gif">' +
-        		'<img src="http://31.media.tumblr.com/0522076f7fbca60d7be0d631ce2c0bf1/tumblr_mr5c1oQtCU1rvzdzso1_500.gif" height="100"><br />' +
+        		'<img src="http://glowtxt.com/data1/8/b/3/8b3e073fd95e9fead03c016f54693dd70bf351d7da39a3ee5e6b4b0d3255bfef95601890afd80709da39a3ee5e6b4b0d3255bfef95601890afd8070944711a819f93b9c4b304c552b6052fca.png">' +
+        		'<img src="http://cdn.staticneo.com/w/pokemon/f/f8/350ColoXD.png" height="100"><br />' +
         		'<b>Ace: </b>Charizard<br />' +
         		'<b>Catchphrase: </b>Well that was a thing.</center>');
     },
