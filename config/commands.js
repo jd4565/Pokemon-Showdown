@@ -1759,16 +1759,6 @@ var commands = exports.commands = {
           		'<b>Ace: </b>Ambipom<br />' +
           		'<b>Catchphrase: </b>Sugar and Spice but not everything nice</center>');
     },
-            
-   	lovrina : 'lovrina', 
-   	lovrina: function(target, room, user) {
-        	if (!this.canBroadcast()) return;
-        	this.sendReplyBox('<center><img height="90" src="http://img1.wikia.nocookie.net/__cb20130912192729/powerlisting/images/d/db/1MAIfha.gif">' +
-        		'<img src="http://glowtxt.com/data1/8/b/3/8b3e073fd95e9fead03c016f54693dd70bf351d7da39a3ee5e6b4b0d3255bfef95601890afd80709da39a3ee5e6b4b0d3255bfef95601890afd8070944711a819f93b9c4b304c552b6052fca.png">' +
-        		'<img src="http://cdn.staticneo.com/w/pokemon/f/f8/350ColoXD.png" height="100"><br />' +
-        		'<b>Ace: </b>Charizard<br />' +
-        		'<b>Catchphrase: </b>Well that was a thing.</center>');
-    },
     
     commands: 'help',
 	h: 'help',
