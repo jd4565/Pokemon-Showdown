@@ -1756,8 +1756,8 @@ var commands = exports.commands = {
         	this.sendReplyBox('<center><img height="120" src="http://i.ytimg.com/vi/1numNwohDaw/0.jpg">' +
         		'<img src=http://i1365.photobucket.com/albums/r752/LynnHikaru/serenatext_zps50a3374a.png" height="100">' +
         		'<img src="http://i1365.photobucket.com/albums/r752/LynnHikaru/Gg3_zps4f62973b.jpg" height="100"><br />' +
-        		'<b>Ace: </b>Gardevoir<br />' +
-        		'<b>Catchphrase: </b>Maybe my fairy tale has a different ending than I dreamed it would. But thats OK.</center>');
+        		'<b>Ace: </b>Ambipom<br />' +
+        		'<b>Catchphrase: </b>Sugar and Spice but not everything nice</center>');
     },
         
    	yang : 'yang xiao long', 
