@@ -435,7 +435,6 @@ fs.readFile('./config/ipbans.txt', function (err, data) {
 	Users.checkRangeBanned = Cidr.checker(rangebans);
 });
 
-global.tour = require('./tour.js').tour();
 try { 
 	global.frostcommands = require('./frost-commands.js');
 } catch (e) { 
