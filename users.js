@@ -1472,6 +1472,7 @@ function unlock(name, unlocked, noRecurse) {
 	for (var id in lockedUsers) {
 		if (lockedUsers[id] === userid || id === userid) {
 			delete lockedUsers[id];
+			unlocked = unlocked || {};
 			unlocked[name] = 1;
 		}
 	}
