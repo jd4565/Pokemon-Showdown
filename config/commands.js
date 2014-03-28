@@ -1749,15 +1749,16 @@ var commands = exports.commands = {
         		'<b>Ace: </b>Arcanine and Ninetales<br />' +
         		'<b>Catchphrase: </b>When life gives me lemons i dont make lemonade, I make lemon grenades..</center>');
     },
-        
-   	yang : 'yang xiao long', 
-   	yang: function(target, room, user) {
+
+            
+   	rosexblair : 'Rose and Blair', 
+   	rosexblair: function(target, room, user) {
         	if (!this.canBroadcast()) return;
-         	this.sendReplyBox('<center><img height="120" src="http://i.ytimg.com/vi/1numNwohDaw/0.jpg">' +
-          		'<img src=http://i1365.photobucket.com/albums/r752/LynnHikaru/serenatext_zps50a3374a.png" height="100">' +
-          		'<img src="http://i1365.photobucket.com/albums/r752/LynnHikaru/Gg3_zps4f62973b.jpg" height="100"><br />' +
-          		'<b>Ace: </b>Ambipom<br />' +
-          		'<b>Catchphrase: </b>Sugar and Spice but not everything nice</center>');
+         	this.sendReplyBox('<center><img height="120" src="http://images.wikia.com/rwby/images/2/24/RubyReveal.gif">' +
+          		'<img src="http://i.imgur.com/5PtCLDR.gif" height="100">' +
+          		'<img src="http://img4.wikia.nocookie.net/__cb20130824083005/rwby/images/f/fc/Boop.gif" height="100"><br />' +
+          		'<b>Ace: </b>Charizard and Goodra<br />' +
+          		'<b>Catchphrase: </b>As long as were together thats all that matters.</center>');
     },
     
     commands: 'help',
