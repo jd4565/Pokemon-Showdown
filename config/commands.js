@@ -1751,7 +1751,7 @@ var commands = exports.commands = {
     },
 
             
-   	rosexblair : 'Rose and Blair', 
+   	rosexbliar : 'rosexblair', 
    	rosexblair: function(target, room, user) {
         	if (!this.canBroadcast()) return;
          	this.sendReplyBox('<center><img height="120" src="http://images.wikia.com/rwby/images/2/24/RubyReveal.gif">' +
