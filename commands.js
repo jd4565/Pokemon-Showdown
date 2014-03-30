@@ -2392,8 +2392,8 @@ var commands = exports.commands = {
 		} else if (target === 'frost' || target === 'more') {
 
 			try {
-				CommandParser.uncacheTree('./frostcommands.js');
-				frostcommands = require('./frostcommands.js');
+				CommandParser.uncacheTree('./frost-commands.js');
+				frostcommands = require('./frost-commands.js');
 				return this.sendReply('Frost commands have been hot-patched.');
 			} catch (e) {
 				return this.sendReply('Something failed while trying to hotpatch chat: \n' + e.stack);
