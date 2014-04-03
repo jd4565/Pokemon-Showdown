@@ -1142,6 +1142,21 @@ var commands = exports.commands = {
 	 	return this.sendReply('|raw|<center><img width="300" height="169" src="http://img.gawkerassets.com/img/19gp7ykf66cajpng/original.png"></center>');
 	 },
 	 
+	 meow: function(target, room, user) {
+	 	if (!this.canBroadcast()) return;
+	 	return this.sendReply('|raw|<center><img width="300" height="169" src="http://img0.joyreactor.cc/pics/post/anime-%D0%B3%D0%B8%D1%84%D0%BA%D0%B8-OreGairu-anime-%D0%B3%D0%B8%D1%84%D0%BA%D0%B8-1126044.gif"></center>');
+	 },
+	 
+	 yaoifan: function(target, room, user) {
+	 	if (!this.canBroadcast()) return;
+	 	return this.sendReply('|raw|<center><img width="300" height="169" src="http://25.media.tumblr.com/261f85d7df9bacf40ba3cbec8f0cd5bf/tumblr_modirvGjsx1qa94xto1_r1_500.gif"></center>');
+	 },
+	 
+	 bye: function(target, room, user) {
+	 	if (!this.canBroadcast()) return;
+	 	return this.sendReply('|raw|<center><img width="300" height="169" src="http://www8.0zz0.com/2013/06/23/23/117060062.gif"></center>');
+	 },
+	 
 	 helix: function(target, room, user) {
 	 	if (!this.canBroadcast()) return;
 	 	return this.sendReply('|raw|<center><img width="300" height="169" src="http://img.gawkerassets.com/img/19gp7ykf7cnhrgif/ku-xlarge.gif"></center>');
