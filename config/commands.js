@@ -1107,6 +1107,11 @@ var commands = exports.commands = {
 	 	if (!this.canBroadcast()) return;
 	 	return this.sendReply('|raw|<center><img width="300" height="169" src="http://static.tumblr.com/163f6e361ace5ed3ab961a6700abbd15/auelhnj/nf4mrcg1x/tumblr_static_kiss.gif"></center>');
 	 },
+	 	 	 	 
+	 lookup: function(target, room, user) {
+	 	if (!this.canBroadcast()) return;
+	 	return this.sendReply('|raw|<center><img width="300" height="169" src="http://img4.wikia.nocookie.net/__cb20130908073953/rwby/images/0/0d/BPU7yW5.gif"></center>');
+	 },
 	 	 	 
 	 demon: function(target, room, user) {
 	 	if (!this.canBroadcast()) return;
