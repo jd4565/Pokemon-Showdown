@@ -1057,6 +1057,16 @@ var commands = exports.commands = {
 	 	if (!this.canBroadcast()) return;
 	 	return this.sendReply('|raw|<center><img width="300" height="169" src="http://31.media.tumblr.com/b86cf32cad9df3e1c31e67c678a443a5/tumblr_muli1oVcqm1qzkj9ko3_500.gif"></center>');
 	 },
+	 
+	 blake: function(target, room, user) {
+	 	if (!this.canBroadcast()) return;
+	 	return this.sendReply('|raw|<center><img width="300" height="169" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjGuYgIFFeLnUenbC7MFn08RYMFJl-RNqRJA31tnnaollyne1XRzOBea4"></center>');
+	 },
+	 
+	 weiss: function(target, room, user) {
+	 	if (!this.canBroadcast()) return;
+	 	return this.sendReply('|raw|<center><img width="300" height="169" src="http://images6.fanpop.com/image/photos/34700000/Weiss-rwby-34714048-400-225.gif"></center>');
+	 },
 
 	 owch: function(target, room, user) {
 	 	if (!this.canBroadcast()) return;
