@@ -1671,10 +1671,10 @@ var commands = exports.commands = {
 	ace: 'ace',
 	ace: function(target, room, user) {
 		if (!this.canBroadcast()) return;
-		this.sendReplyBox('frontier: Falco<br \>' +
+		this.sendReplyBox('frontier: Ace<br \>' +
 			'Ace: Gengar <br \>' +
 			'Quote: Integrity first, Service before self, Excellence in all we do.<br \>' +
-			'<img src="http://fc07.deviantart.net/fs71/i/2012/315/7/f/scary_gengar_by_kokodriliscus-d5knjm3.jpg">')
+			'<img src="http://i.imgur.com/4JMQBUV.gif">')
 	},
 
 	kolotos: 'kolotos',
