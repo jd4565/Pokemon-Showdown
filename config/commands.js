@@ -1122,6 +1122,11 @@ var commands = exports.commands = {
 	 	if (!this.canBroadcast()) return;
 	 	return this.sendReply('|raw|<center><img width="300" height="169" src="http://i.imgur.com/ujkYR.gif"></center>');
 	 },
+	 	 	 	 	 
+	 legsfunny: function(target, room, user) {
+	 	if (!this.canBroadcast()) return;
+	 	return this.sendReply('|raw|<center><img width="300" height="169" src="http://i.imgur.com/9g2b8M1.gif"></center>');
+	 },
 	 
 	 lookup: function(target, room, user) {
 	 	if (!this.canBroadcast()) return;
