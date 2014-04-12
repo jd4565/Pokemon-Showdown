@@ -1799,6 +1799,26 @@ var commands = exports.commands = {
         		'<b>Ace: </b>Sylveon<br />' +
         		'<b>Catchphrase: </b>You may think my fairys are cute sorry but thats my ruby.</center>');
     },
+                            
+   	lovrina : 'lovrina',
+   	lovrina: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://i203.photobucket.com/albums/aa15/bump69911/Pokemon/Avatars/i_lovrina.gif">' +
+        		'<img src="http://i.imgur.com/g76y0AY.png" height="100">' +
+        		'<img src="hhttp://fc07.deviantart.net/fs71/f/2012/245/3/9/profile_picture_by_ask_milotic-d5ddtu6.png" height="100"><br />' +
+        		'<b>Ace: </b>Spinda<br />' +
+        		'<b>Catchphrase: </b>I like me a win.</center>');
+    },
+                                
+   	atomskxmelody : 'atomskxmelody',
+   	atomskxmelody: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://31.media.tumblr.com/2beffec8c82815d7ce9bced0596bbeb4/tumblr_ms5xy54W4b1s1syfso1_500.gif">' +
+        		'<img src="http://i.imgur.com/RnbtHQh.png" height="100">' +
+        		'<img src="http://24.media.tumblr.com/eae21cecedab8952379a03c023388625/tumblr_mqb3o9scfu1qcrbfzo1_500.gif" height="100"><br />' +
+        		'<b>Ace: </b>Shuckle<br />' +
+        		'<b>Catchphrase: </b>Screw quotes.</center>');
+    },
                    
    	missing1 : 'missing1',
    	missing1: function(target, room, user) {
