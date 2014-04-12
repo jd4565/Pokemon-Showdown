@@ -1668,13 +1668,13 @@ var commands = exports.commands = {
 			'<img src="http://img.pokemondb.net/sprites/black-white/anim/normal/toxicroak.gif">')
 	},
 	
-	falco: 'Falco',
-	falco: function(target, room, user) {
+	ace: 'ace',
+	ace: function(target, room, user) {
 		if (!this.canBroadcast()) return;
 		this.sendReplyBox('frontier: Falco<br \>' +
 			'Ace: Gengar <br \>' +
 			'Quote: Integrity first, Service before self, Excellence in all we do.<br \>' +
-			'<img src="http://24.media.tumblr.com/a056fe9ac8f8ee1dddac979c07b3f8d1/tumblr_mfq5qx4aah1r84emlo1_500.gif">')
+			'<img src="http://fc07.deviantart.net/fs71/i/2012/315/7/f/scary_gengar_by_kokodriliscus-d5knjm3.jpg">')
 	},
 
 	kolotos: 'kolotos',
