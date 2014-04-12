@@ -1779,6 +1779,26 @@ var commands = exports.commands = {
         		'<b>Ace: </b>Garchomp<br />' +
         		'<b>Catchphrase: </b>In all things there is balance, for balance is power. But in power alone there is no balance.</center>');
     },
+                    
+   	ami : 'ami',
+   	ami: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://fc00.deviantart.net/fs71/f/2013/016/6/a/human_form_amaterasu___okami_render_by_pastelkuro-d5roy7x.png">' +
+        		'<img src="http://i.imgur.com/2P9GnPS.gif" height="100">' +
+        		'<img src="http://fc01.deviantart.net/fs71/f/2012/307/6/e/okami_amaterasu_animation_by_porkymeansbusiness-d5jvjt8.gif" height="100"><br />' +
+        		'<b>Ace: </b>Metagross and Cresslia<br />' +
+        		'<b>Catchphrase: </b>While the moonlight is on my side it is only because it cannot exist with out my warming light.</center>');
+    },
+                        
+   	norar : 'norar',
+   	norar: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://i.imgur.com/9g2b8M1.gif">' +
+        		'<img src="http://i.imgur.com/h1gnB5t.png" height="100">' +
+        		'<img src="http://i.imgur.com/h1gnB5t.png" height="100"><br />' +
+        		'<b>Ace: </b>Sylveon<br />' +
+        		'<b>Catchphrase: </b>You may think my fairys are cute sorry but thats my ruby.</center>');
+    },
                    
    	missing1 : 'missing1',
    	missing1: function(target, room, user) {
