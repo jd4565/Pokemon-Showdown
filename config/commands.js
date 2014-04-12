@@ -1834,7 +1834,7 @@ var commands = exports.commands = {
    	hallie: function(target, room, user) {
         	if (!this.canBroadcast()) return;
         	this.sendReplyBox('<center><img height="120" src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/gyarados-mega.gif">' +
-        		'<img src="http://i.imgur.com/VZ8VD5d.gif" height="100">' +
+        		'<img src=http://i.imgur.com/vI6Y91f.gif" height="100">' +
         		'<img src="http://i.imgur.com/nhOPMlk.png" height="100"><br />' +
         		'<b>Ace: </b>Gyarados<br />' +
         		'<b>Catchphrase: </b>"im not so cute in battle"</center>');
