@@ -1795,7 +1795,7 @@ var commands = exports.commands = {
         	if (!this.canBroadcast()) return;
         	this.sendReplyBox('<center><img height="120" src="http://i.imgur.com/9g2b8M1.gif">' +
         		'<img src="http://i.imgur.com/h1gnB5t.png" height="100">' +
-        		'<img src="http://e-shuushuu.net/images/2013-09-12-605561.gif" height="100"><br />' +
+        		'<img src="http://img2.wikia.nocookie.net/__cb20130809103009/rwby/images/2/2d/NoraValkyrieProfilePicture.png" height="100"><br />' +
         		'<b>Ace: </b>Sylveon<br />' +
         		'<b>Catchphrase: </b>You may think my fairys are cute sorry but thats my ruby.</center>');
     },
