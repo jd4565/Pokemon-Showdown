@@ -1805,7 +1805,7 @@ var commands = exports.commands = {
         	if (!this.canBroadcast()) return;
         	this.sendReplyBox('<center><img height="120" src="http://i203.photobucket.com/albums/aa15/bump69911/Pokemon/Avatars/i_lovrina.gif">' +
         		'<img src="http://i.imgur.com/g76y0AY.png" height="100">' +
-        		'<img src="hhttp://fc07.deviantart.net/fs71/f/2012/245/3/9/profile_picture_by_ask_milotic-d5ddtu6.png" height="100"><br />' +
+        		'<img src=http://www.writers-network.com/pictures/spinda.jpg" height="100"><br />' +
         		'<b>Ace: </b>Spinda<br />' +
         		'<b>Catchphrase: </b>I like me a win.</center>');
     },
