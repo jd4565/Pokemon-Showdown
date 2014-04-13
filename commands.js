@@ -2503,6 +2503,7 @@ var commands = exports.commands = {
 		this.logEntry(user.name + ' used /endlockdown');
 
 	},
+
 	
 	restart: function(target, room, user) {
 		if (!this.can('lockdown')) return false;
@@ -3139,5 +3140,33 @@ var commands = exports.commands = {
 		}
 		user.rename(targetName, targetToken, targetAuth, connection);
 	},
+	// VIP Commands
+	if (target === 'VIP' || target === '/customavatar') {
+		matched = true;
+		this.sendReply('/customavatar [image] - Sets the specified image as your avatar. Image must be a GIF or PNG. Requires: VIP');
+		}
+	if (target === 'all' || target === 'help' || target === 'h' || target === '?' || target === 'commands') {
+		matched = true;
+		this.sendReply('/help OR /h OR /? - Gives you help.');
+		}
+	if (!target) {
+		this.sendReply('COMMANDS: /msg, /reply, /ignore, /ip, /rating, /nick, /avatar, /rooms, /whois, /help, /away, /back, /timestamps, /highlight, /poof');
+		this.sendReply('INFORMATIONAL COMMANDS: /data, /dexsearch, /groups, /opensource, /avatars, /faq, /rules, /intro, /tiers, /othermetas, /learn, /analysis, /time, /recordusers, /tourstats, /calc (replace / with ! to broadcast. (Requires: + % @ & ~))');
+		this.sendReply('For details on all room commands, use /roomhelp');
+		this.sendReply('For details on all commands, use /help all');
+		if (user.vip) {
+			this.sendReply('VIP COMMANDS: /customavatar');
+			}
+		if (user.group !== config.groupsranking[0]) {
+			this.sendReply('DRIVER COMMANDS: /mute, /unmute, /announce, /modlog, /forcerename, /alts')
+			this.sendReply('MODERATOR COMMANDS: /ban, /unban, /unbanall, /ip, /redirect, /kick');
+			this.sendReply('LEADER COMMANDS: /promote, /demote, /forcewin, /forcetie, /declare, /permaban, /unpermaban, /makechatroom, /leagueroom, /privateroom, /roomfounder');
+			this.sendReply('For details on all moderator commands, use /help @');
+			}
+			this.sendReply('For details of a specific command, use something like: /help data');
+		} else if (!matched) {
+			this.sendReply('The command "/'+target+'" was not found. Try /help for general help');
+		}
+	}, 
 
 };
