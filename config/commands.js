@@ -1082,6 +1082,11 @@ var commands = exports.commands = {
 	 	if (!this.canBroadcast()) return;
 	 	return this.sendReply('|raw|<center><img width="300" height="169" src="http://31.media.tumblr.com/0b63717080612b951cd76bb8fbe222f5/tumblr_muli1oVcqm1qzkj9ko4_500.gif"></center>');
 	 },
+	 
+	 lovrina: function(target, room, user) {
+	 	if (!this.canBroadcast()) return;
+	 	return this.sendReply('|raw|<center><img width="300" height="169" src="http://stream1.gifsoup.com/view7/3834891/lovrina-o.gif"></center>');
+	 },
 
 	 spoilerwarning: function(target, room, user) {
 	 	if (!this.canBroadcast()) return;
