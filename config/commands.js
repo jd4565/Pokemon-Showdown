@@ -1819,7 +1819,7 @@ var commands = exports.commands = {
    	haruko: function(target, room, user) {
         	if (!this.canBroadcast()) return;
         	this.sendReplyBox('<center><img height="120" src="http://31.media.tumblr.com/2beffec8c82815d7ce9bced0596bbeb4/tumblr_ms5xy54W4b1s1syfso1_500.gif">' +
-        		'<img src="http://i.imgur.com/KlOaGjc.png" height="100">' +
+        		'<img src="http://i.imgur.com/GKJZc0e.png" height="100">' +
         		'<img src="http://24.media.tumblr.com/eae21cecedab8952379a03c023388625/tumblr_mqb3o9scfu1qcrbfzo1_500.gif" height="100"><br />' +
         		'<b>Ace: </b>Pikachu<br />' +
         		'<b>Catchphrase: </b>Screw Catchphrases</center>');
