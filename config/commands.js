@@ -1733,6 +1733,17 @@ var commands = exports.commands = {
         		'<b>Ace: </b>Volcarona and Sableye<br />' +
         		'<b>Catchphrase: </b>As Long As You Have a Fire In Your Heart To Do Something, Do it, Because That Fire Wont Be Burning Forever and Shall Soon Diminish.</center>');
     },
+            	
+    
+   	serenaxsnails : 'serenaxsnails', 
+   	serenaxsnails: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://baratijasblog.com/wp-content/uploads/2009/06/spice.jpg">' +
+        		'<img src="http://i1365.photobucket.com/albums/r752/LynnHikaru/sxs_zps77b238e5.png" height="100">' +
+        		'<img src="http://www.takuchat.com/wp-content/uploads/2013/04/131813-untitled_1_large.png" height="100"><br />' +
+        		'<b>Ace: </b>Quagsire and Milotic<br />' +
+        		'<b>Catchphrase: </b>You Sir are desperate for me to tease you. I still believe you to be adorable.</center>');
+    },
         
    	vale : 'vale',
    	slyph : 'vale',
