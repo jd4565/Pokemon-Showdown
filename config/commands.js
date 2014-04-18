@@ -1739,7 +1739,7 @@ var commands = exports.commands = {
    	serenaxsnails: function(target, room, user) {
         	if (!this.canBroadcast()) return;
         	this.sendReplyBox('<center><img height="120" src="http://baratijasblog.com/wp-content/uploads/2009/06/spice.jpg">' +
-        		'<img src="http://i1365.photobucket.com/albums/r752/LynnHikaru/sxs_zps77b238e5.png" height="100">' +
+        		'<img src="http://i1365.photobucket.com/albums/r752/LynnHikaru/sxs2_zpsc2ea959e.png" height="100">' +
         		'<img src="http://www.takuchat.com/wp-content/uploads/2013/04/131813-untitled_1_large.png" height="100"><br />' +
         		'<b>Ace: </b>Quagsire and Milotic<br />' +
         		'<b>Catchphrase: </b>You Sir are desperate for me to tease you. I still believe you to be adorable.</center>');
