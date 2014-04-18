@@ -1756,11 +1756,21 @@ var commands = exports.commands = {
         		'<b>Catchphrase: </b>The Cracks cant support you forever, theyll crack and when they do the consequences can be unforseen.</center>');
     },
             
-   	austos : 'austos',
-   	austos: function(target, room, user) {
+   	anabel : 'anabel',
+   	anabel: function(target, room, user) {
         	if (!this.canBroadcast()) return;
         	this.sendReplyBox('<center><img height="120" src="http://img1.wikia.nocookie.net/__cb20131110221203/es.pokemon/images/1/1c/Greninja_XY.gif">' +
         		'<img src="http://209.190.33.194/images/812/812731df1c4658fb3f444026cd73eb0b5b85a43d.png" height="100">' +
+        		'<img src="http://i.imgur.com/gmblw27.gif" height="100"><br />' +
+        		'<b>Ace: </b>Pidgeot<br />' +
+        		'<b>Catchphrase: </b>Predicting isnt needed when you can use your mind.</center>');
+    },
+                
+   	austos : 'austos',
+   	austos: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="https://31.media.tumblr.com/ab408b9a11a34beb7556d0deec06082b/tumblr_inline_myqkw7UVSS1qhn05c.jpg">' +
+        		'<img src="http://i.imgur.com/wXBPBlV.png" height="100">' +
         		'<img src="http://cdn.bulbagarden.net/upload/thumb/6/6d/Black_2_White_2_N.png/200px-Black_2_White_2_N.png" height="100"><br />' +
         		'<b>Ace: </b>Greninja<br />' +
         		'<b>Catchphrase: </b>Perfection requires Adaptation.</center>');
