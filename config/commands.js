@@ -1744,6 +1744,16 @@ var commands = exports.commands = {
         		'<b>Ace: </b>Quagsire and Milotic<br />' +
         		'<b>Catchphrase: </b>You Sir are desperate for me to tease you. I still believe you to be adorable.</center>');
     },
+    
+    holo : 'holo', 
+   	holo: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT0qQ3rU0rC01XSSlClj0GUOVMbvfzjNiprQs_TbbolZMMxBK-wFA">' +
+        		'<img src="http://i1365.photobucket.com/albums/r752/LynnHikaru/holo1_zpsc4b0254d.png">' +
+        		'<img src="http://img1.ak.crunchyroll.com/i/spire3/13a6e9bf109385c6e6391b4fd4cb8bea1340620725_full.jpg" height="100"><br />' +
+        		'<b>Ace: </b>Ludicolo and Milotic<br />' +
+        		'<b>Catchphrase: </b>"Stupid potato!"</center>');
+    },
         
    	vale : 'vale',
    	slyph : 'vale',
