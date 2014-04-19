@@ -1761,7 +1761,7 @@ var commands = exports.commands = {
         	if (!this.canBroadcast()) return;
         	this.sendReplyBox('<center><img height="120" src="http://squarefaction.ru/files/user/761/storage/1278367700.jpg">' +
         		'<img src="http://i.imgur.com/qOqeudE.png" height="100">' +
-        		'<img src="https://pfimg.playfire.com/_proxy/?url=http%3A%2F%2F24.media.tumblr.com%2Ftumblr_m3x4a0944E1qd6x5to1_1280.jpg&hmac=ff3144524b13280ae9504b6e857c4d16" height="100"><br />' +
+        		'<img src="http://i.imgur.com/gFKsyg1.jpg?1" height="100"><br />' +
         		'<b>Ace: </b>Kabutops<br />' +
         		'<b>Catchphrase: </b>There are times where we cannot stand without the support of others.</center>');
     },
