@@ -1756,6 +1756,16 @@ var commands = exports.commands = {
         		'<b>Catchphrase: </b>The Cracks cant support you forever, theyll crack and when they do the consequences can be unforseen.</center>');
     },
             
+   	mitsuru : 'mitsuru',
+   	mitsuru: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://squarefaction.ru/files/user/761/storage/1278367700.jpg">' +
+        		'<img src="http://i.imgur.com/qOqeudE.png" height="100">' +
+        		'<img src="http://static.zerochan.net/Shin.Megami.Tensei%3A.PERSONA.3.full.3196.jpg" height="100"><br />' +
+        		'<b>Ace: </b>Kabutops<br />' +
+        		'<b>Catchphrase: </b>There are times where we cannot stand without the support of others.</center>');
+    },
+            
    	anabel : 'anabel',
    	anabel: function(target, room, user) {
         	if (!this.canBroadcast()) return;
