@@ -1886,15 +1886,6 @@ var commands = exports.commands = {
         		'<b>Catchphrase: </b>"im not so cute in battle"</center>');
     },
     
-    lovrinaxhallie : 'lovrinaxhallie',
-   	lovrinaxhallie: function(target, room, user) {
-        	if (!this.canBroadcast()) return;
-        	this.sendReplyBox('<center><img height="120" src="https://0-media-cdn.foolz.us/ffuuka/board/vp/image/1396/15/1396153277531.png">' +
-        		'<img src="http://i1365.photobucket.com/albums/r752/LynnHikaru/hxh_zps609eecf5.png" height="100">' +
-        		'<img src="http://th05.deviantart.net/fs71/PRE/f/2013/249/2/6/remix_pokemon_colosseum_the_under_orkus_by_melodycrystel-d6l7u6w.png" height="100"><br />' +
-        		'<b>Ace: </b>Shadow Lugia and Shadow Suicune<br />' +
-        		'<b>Catchphrase: </b>"My boo, My BFF"</center>');
-    },
 
             
    	rosexbliar : 'rosexblair', 
