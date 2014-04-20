@@ -1775,6 +1775,16 @@ var commands = exports.commands = {
         		'<b>Ace: </b>Kabutops<br />' +
         		'<b>Catchphrase: </b>There are times where we cannot stand without the support of others.</center>');
     },
+                
+        sabo :  'sabo',
+   	sabo: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://fc07.deviantart.net/fs70/i/2014/101/5/a/hiken_no_sabo_by_renealexa-d7e0pja.jpg">' +
+        		'<img src="http://i.imgur.com/lGR8TUu.png" height="100">' +
+        		'<img src="http://3.bp.blogspot.com/-Fsoi6EY8EWc/UquK586b-VI/AAAAAAAAAD4/pERIvCMc8Yg/s1600/sabo+ace+luffy.pnghttp://i.imgur.com/gFKsyg1.jpg?1" height="100"><br />' +
+        		'<b>Ace: </b>Portgas D. Ace<br />' +
+        		'<b>Catchphrase: </b>One Piece 4Ever.</center>');
+    },
             
    	anabel : 'anabel',
    	anabel: function(target, room, user) {
