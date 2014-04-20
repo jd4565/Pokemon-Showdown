@@ -1885,15 +1885,25 @@ var commands = exports.commands = {
         		'<b>Ace: </b>Arcanine and Ninetales<br />' +
         		'<b>Catchphrase: </b>When life gives me lemons i dont make lemonade, I make lemon grenades..</center>');
     },
-                       
+                        
+   	joy : 'joy',
+      	joy: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/gyarados-mega.gif">' +
+        		'<img src=http://i.imgur.com/cVyImcs.png" height="100">' +
+        		'<img src="http://fc06.deviantart.net/fs71/f/2012/258/5/c/nurse_joy_by_dmy_gfx-d5et0ak.jpg" height="100"><br />' +
+        		'<b>Ace: </b>Zangoose<br />' +
+        		'<b>Catchphrase: </b>"I love me a win"</center>');
+    },
+                    
    	hallie : 'hallie',
-   	hallie: function(target, room, user) {
+      	hallie: function(target, room, user) {
         	if (!this.canBroadcast()) return;
         	this.sendReplyBox('<center><img height="120" src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/gyarados-mega.gif">' +
         		'<img src=http://i.imgur.com/vI6Y91f.gif" height="100">' +
         		'<img src="http://i.imgur.com/nhOPMlk.png" height="100"><br />' +
         		'<b>Ace: </b>Gyarados<br />' +
-        		'<b>Catchphrase: </b>"im not so cute in battle"</center>');
+        		'<b>Catchphrase: </b>"I will always flow, water by water"</center>');
     },
     
 
