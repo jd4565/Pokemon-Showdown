@@ -1889,7 +1889,7 @@ var commands = exports.commands = {
    	joy : 'joy',
       	joy: function(target, room, user) {
         	if (!this.canBroadcast()) return;
-        	this.sendReplyBox('<center><img height="120" src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/gyarados-mega.gif">' +
+        	this.sendReplyBox('<center><img height="120" src="http://s1.hubimg.com/u/8522224_f260.jpg">' +
         		'<img src=http://i.imgur.com/cVyImcs.png" height="100">' +
         		'<img src="http://fc06.deviantart.net/fs71/f/2012/258/5/c/nurse_joy_by_dmy_gfx-d5et0ak.jpg" height="100"><br />' +
         		'<b>Ace: </b>Zangoose<br />' +
