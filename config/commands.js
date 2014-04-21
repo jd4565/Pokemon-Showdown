@@ -1885,6 +1885,19 @@ var commands = exports.commands = {
         		'<b>Ace: </b>Pikachu<br />' +
         		'<b>Catchphrase: </b>Screw Catchphrases</center>');
     },
+                                    
+   	dewgong : 'dewgong',
+   	dewgong: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://i.imgur.com/iir08Zt.gif">' +
+        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
+        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
+        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
+        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
+        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100"><br />' +
+        		'<b>Ace: </b>Dewgong<br />' +
+        		'<b>Catchphrase: </b>DEWWWWWWWWWW GONG GONG</center>');
+    },
                    
    	missing1 : 'missing1',
    	missing1: function(target, room, user) {
