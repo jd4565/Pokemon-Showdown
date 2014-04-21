@@ -1903,7 +1903,7 @@ var commands = exports.commands = {
         		'<img src="http://i.imgur.com/kzCkWh2.png" height="75">' +
         		'<img src="http://24.media.tumblr.com/eae21cecedab8952379a03c023388625/tumblr_mqb3o9scfu1qcrbfzo1_500.gif" height="100"><br />' +
         		'<b>Ace: </b>Greninja<br />' +
-        		'<b>Catchphrase: </b>Screw catchphrases I'm a ninja</center>');
+        		'<b>Catchphrase: </b>Screw catchphrases Im a ninja</center>');
     },
                    
    	missing1 : 'missing1',
