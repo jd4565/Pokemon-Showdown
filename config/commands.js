@@ -1894,6 +1894,18 @@ var commands = exports.commands = {
         		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
         		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
         		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
+        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
+        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
+        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
+        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
+        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
+        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
+        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
+        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
+        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
+        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
+        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
+        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
         		'<img src="http://i.imgur.com/iir08Zt.gif" height="100"><br />' +
         		'<b>Ace: </b>Dewgong<br />' +
         		'<b>Catchphrase: </b>DEWWWWWWWWWW GONG GONG</center>');
