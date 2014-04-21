@@ -1722,6 +1722,16 @@ var commands = exports.commands = {
         		'<b>Ace: </b>Gardevoir<br />' +
         		'<b>Catchphrase: </b>Maybe my fairy tale has a different ending than I dreamed it would. But thats OK.</center>');
     },
+    
+    serenaw : 'Serena Weishaar', 
+   	serenaw: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://cache.desktopnexus.com/thumbnails/183993-bigthumbnail.jpg">' +
+        		'<img src=http://i1365.photobucket.com/albums/r752/LynnHikaru/serenaw2_zpsa2fd85e7.png" height="100">' +
+        		'<img src="http://i.imgur.com/zf1faS4.gif" height="100"><br />' +
+        		'<b>Ace: </b>Gardevoir, Azumarill and Granbull<br />' +
+        		'<b>Catchphrase: </b>Maybe my fairy tale has a different ending than I dreamed it would. But thats OK.</center>');
+    },
         	
     
    	auburn : 'auburn', 
