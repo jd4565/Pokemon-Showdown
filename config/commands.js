@@ -1745,7 +1745,17 @@ var commands = exports.commands = {
     },
             	
     
-   	serenaxsnails : 'serenaxsnails', 
+   	snails : 'snails', 
+   	snails: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://fc09.deviantart.net/fs41/f/2009/013/8/5/Hungry_Quagsire_by_fallenintoshadows.png">' +
+        		'<img src="http://i.imgur.com/xWtX9R7.gif" height="100">' +
+        		'<img src="http://cdn.bulbagarden.net/upload/f/fe/378Regice.png" height="100"><br />' +
+        		'<b>Ace: </b>Regice<br />' +
+        		'<b>Catchphrase: </b>In the frozen North, no flame can be lit.</center>');
+    },
+    
+    serenaxsnails : 'serenaxsnails', 
    	serenaxsnails: function(target, room, user) {
         	if (!this.canBroadcast()) return;
         	this.sendReplyBox('<center><img height="120" src="http://baratijasblog.com/wp-content/uploads/2009/06/spice.jpg">' +
