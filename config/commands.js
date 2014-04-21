@@ -1905,31 +1905,6 @@ var commands = exports.commands = {
         		'<b>Ace: </b>Pikachu<br />' +
         		'<b>Catchphrase: </b>Screw Catchphrases</center>');
     },
-                                    
-   	dewgong : 'dewgong',
-   	dewgong: function(target, room, user) {
-        	if (!this.canBroadcast()) return;
-        	this.sendReplyBox('<center><img height="120" src="http://i.imgur.com/iir08Zt.gif">' +
-        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
-        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
-        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
-        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
-        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
-        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
-        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
-        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
-        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
-        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
-        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
-        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
-        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
-        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
-        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
-        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100">' +
-        		'<img src="http://i.imgur.com/iir08Zt.gif" height="100"><br />' +
-        		'<b>Ace: </b>Dewgong<br />' +
-        		'<b>Catchphrase: </b>DEWWWWWWWWWW GONG GONG</center>');
-    },
                    
    	missing1 : 'missing1',
    	missing1: function(target, room, user) {
@@ -1949,6 +1924,13 @@ var commands = exports.commands = {
         		'<img src="http://fc06.deviantart.net/fs71/f/2012/258/5/c/nurse_joy_by_dmy_gfx-d5et0ak.jpg" height="100"><br />' +
         		'<b>Ace: </b>Zangoose<br />' +
         		'<b>Catchphrase: </b>"I love me a win"</center>');
+    },
+                        
+   	heart : 'heart',
+      	heart: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://icons.iconarchive.com/icons/succodesign/love-is-in-the-web/256/heart-icon.png">' +
+        		'<img src=http://i.imgur.com/Q9NguEO.png" height="100">');
     },
                     
    	hallie : 'hallie',
