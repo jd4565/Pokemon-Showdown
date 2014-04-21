@@ -1042,73 +1042,46 @@ var commands = exports.commands = {
 		connection.popup('Founder: '+founder+'\nOwners: \n'+owners+'\nAdministrators: \n'+admins+'\nLeaders: \n'+leaders+'\nModerators: \n'+mods+'\nDrivers: \n'+drivers+'\nVoices: \n'+voices);
 	},
 
-    stafflist: function(target, room, user, connection) {
-        var buffer = [];
-        var admins = [];
-        var leaders = [];
-        var mods = [];
-        var drivers = [];
-        var voices = [];
-        
-        admins2 = ''; leaders2 = ''; mods2 = ''; drivers2 = ''; voices2 = ''; 
-        stafflist = fs.readFileSync('config/usergroups.csv','utf8');
-        stafflist = stafflist.split('\n');
-        for (var u in stafflist) {
-            line = stafflist[u].split(',');
-			if (line[1] == '~') { 
-                admins2 = admins2 +line[0]+',';
-            } 
-            if (line[1] == '&') { 
-                leaders2 = leaders2 +line[0]+',';
-            }
-            if (line[1] == '@') { 
-                mods2 = mods2 +line[0]+',';
-            } 
-            if (line[1] == '%') { 
-                drivers2 = drivers2 +line[0]+',';
-            } 
-            if (line[1] == '+') { 
-                voices2 = voices2 +line[0]+',';
-             } 
-        }
-        admins2 = admins2.split(',');
-        leaders2 = leaders2.split(',');
-        mods2 = mods2.split(',');
-        drivers2 = drivers2.split(',');
-        voices2 = voices2.split(',');
-        for (var u in admins2) {
-            if (admins2[u] != '') admins.push(admins2[u]);
-        }
-        for (var u in leaders2) {
-            if (leaders2[u] != '') leaders.push(leaders2[u]);
-        }
-        for (var u in mods2) {
-            if (mods2[u] != '') mods.push(mods2[u]);
-        }
-        for (var u in drivers2) {
-            if (drivers2[u] != '') drivers.push(drivers2[u]);
-        }
-        for (var u in voices2) {
-            if (voices2[u] != '') voices.push(voices2[u]);
-        }
-        if (admins.length > 0) {
-            admins = admins.join(', ');
-        }
-        if (leaders.length > 0) {
-            leaders = leaders.join(', ');
-        }
-        if (mods.length > 0) {
-            mods = mods.join(', ');
-        }
-        if (drivers.length > 0) {
-            drivers = drivers.join(', ');
-        }
-        if (voices.length > 0) {
-            voices = voices.join(', ');
-        }
-        connection.popup('Administrators: \n'+admins+'\nLeaders: \n'+leaders+'\nModerators: \n'+mods+'\nDrivers: \n'+drivers+'\nVoices: \n'+voices);
-    },
+    	stafflist: function(target, room, user, connection) {
+		var buffer = {
+			admins: [],
+			leaders: [],
+			mods: [],
+			drivers: [],
+			voices: []
+		};
 
+		var staffList = fs.readFileSync('config/usergroups.csv', 'utf8').split('\n'); 
+		var staff;
+
+		var len = staffList.length;
+		while (len--) {
+			staff = staffList[len].split(',');
+			if (staff[1] === '~') {
+				buffer.admins.push(staff[0]);
+			}
+			if (staff[1] === '&') {
+				buffer.leaders.push(staff[0]);
+			}
+			if (staff[1] === '@') {
+				buffer.mods.push(staff[0]);
+			}
+			if (staff[1] === '%') {
+				buffer.drivers.push(staff[0]);
+			}
+			if (staff[1] === '+') {
+				buffer.voices.push(staff[0]);
+			}
+		}
+
+		buffer.admins = buffer.admins.join(', ');
+		buffer.leaders = buffer.leaders.join(', ');
+		buffer.mods = buffer.mods.join(', ');
+		buffer.drivers = buffer.drivers.join(', ');
+		buffer.voices = buffer.voices.join(', ');
+
+		connection.popup('Administrators: \n--------------------\n' + buffer.admins + '\n\nLeaders:\n-------------------- \n' + buffer.leaders + '\n\nModerators:\n-------------------- \n' + buffer.mods + '\n\nDrivers: \n--------------------\n' + buffer.drivers + '\n\nVoices:\n-------------------- \n' + buffer.voices);
+	},
 
 	leave: 'part',
 	part: function(target, room, user, connection) {
