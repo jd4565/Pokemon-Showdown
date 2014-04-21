@@ -1786,6 +1786,16 @@ var commands = exports.commands = {
         		'<b>Catchphrase: </b>There are times where we cannot stand without the support of others.</center>');
     },
                 
+   	reddo : 'reddo',
+   	reddo: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://i.imgur.com/s7T6T8X.png">' +
+        		'<img src="http://i.imgur.com/XJJqNKg.png" height="100">' +
+        		'<img src="http://fc04.deviantart.net/fs70/f/2013/087/6/a/ferrothorn___power_whip_by_ishmam-d5zmcwn.png" height="100"><br />' +
+        		'<b>Ace: </b>Kabutops<br />' +
+        		'<b>Catchphrase: </b>There are times where we cannot stand without the support of others.</center>');
+    },
+                
         sabo :  'sabo',
    	sabo: function(target, room, user) {
         	if (!this.canBroadcast()) return;
