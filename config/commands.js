@@ -1905,7 +1905,17 @@ var commands = exports.commands = {
         		'<b>Ace: </b>Greninja<br />' +
         		'<b>Catchphrase: </b>Screw catchphrases Im a ninja</center>');
     },
-                   
+                                
+   	aluuta : 'aluuta',
+   	aluuta: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRkXCEnZymvdaDxGZZxjFbx68R9DuCZI2AGKhuvPZBei0deptJO">' +
+        		'<img src="http://static1.glowtxt.com/data1/f/1/5/f15e6e44b4f3450d47c6895d07e9f1fc13539e1cda39a3ee5e6b4b0d3255bfef95601890afd80709da39a3ee5e6b4b0d3255bfef95601890afd807098a5937dd664cb359ff50a8a2446f8c29.gif" height="100">' +
+        		'<img src="http://www.drawingnow.com/file/videos/image/how-to-draw-winter-soldier-bucky-from-captain-america-the-winter-soldier.jpg" height="100"><br />' +
+        		'<b>Ace: </b>Gliscor<br />' +
+        		'<b>Catchphrase: </b> </center>');
+    },
+                              
    	missing1 : 'missing1',
    	missing1: function(target, room, user) {
         	if (!this.canBroadcast()) return;
