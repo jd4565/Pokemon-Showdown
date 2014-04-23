@@ -1758,7 +1758,7 @@ var commands = exports.commands = {
    	emily : 'emily', 
    	emily: function(target, room, user) {
         	if (!this.canBroadcast()) return;
-        	this.sendReplyBox('<center><img height="120" src="http://love.wallpaperklix.com/wp-content/uploads/2014/01/anime_girl_with_headphones_render.png">' +
+        	this.sendReplyBox('<center><img height="120" src="http://love.wallpaperklix.com/wp-content/uploads/2014/01/anime_girl_with_headphones_render-300x274.png">' +
         		'<img src="http://oi58.tinypic.com/15hjtcy.jpg" height="100">' +
         		'<img src="http://www.wallpaperhi.com/thumbnails/detail/20120827/blue%20eyes%20ribbons%20pink%20hair%20blush%20kasukabe%20akira%20anime%20girls%20sakura%20sakura%20sakura%20nanako%20scans%2018_www.wallpaperhi.com_26.jpg" height="100"><br />' +
         		'<b>Ace: </b>Weavile<br />' +
