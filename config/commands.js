@@ -1924,6 +1924,7 @@ var commands = exports.commands = {
         		'<img src=http://ekladata.com/jo7KeBo-S9_qGaAVxplr4QZMe_c.gif" height="100"><br />' +
         		'<b>Ace: </b>Emolga<br />' +
         		'<b>Catchphrase: </b>"YOU CHEATED ON ME...WITH A WOMAN!"</center>');
+    },
                                 
    	haruko : 'haruko',
    	haruko: function(target, room, user) {
