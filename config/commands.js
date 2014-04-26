@@ -1995,6 +1995,26 @@ var commands = exports.commands = {
           		'<b>Catchphrase: </b>As long as were together thats all that matters.</center>');
     },
     
+    valius : 'valius', 
+   	valius: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+         	this.sendReplyBox('<center><img height="120" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSJVTGiUxQNgL2UcU9NE5nOMaWzDgbRxt0B9hbQES90UOnXH3nupw">' +
+          		'<img src="http://i.imgur.com/iNkpKN3.gif" height="100">' +
+          		'<img src="http://img1.wikia.nocookie.net/__cb20140311211615/crossoverrp/images/thumb/7/7b/Pokemon_Thunder_trainer_1.jpg/309px-Pokemon_Thunder_trainer_1.jpg" height="100"><br />' +
+          		'<b>Ace: </b>Raikou<br />' +
+          		'<b>Catchphrase: </b>"All it takes is one loose connection to unleash electrical chaos."</center>');
+    },
+    
+    blue : 'blue', 
+   	blue: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+         	this.sendReplyBox('<center><img height="120" src="http://25.media.tumblr.com/b4f01fca213952c519a54358e651992f/tumblr_mibltiuCaA1rtatqpo1_500.gif">' +
+          		'<img src="http://i.imgur.com/nBA8fhl.gif" height="100">' +
+          		'<img src="http://3.bp.blogspot.com/-ikPcvsi5iYc/Ux3OjIDrYRI/AAAAAAAAB7U/nhxCth-O9xw/s1600/tumblr_mveh1mETn61swxcu7o1_400.gif" height="100"><br />' +
+          		'<b>Ace: </b>Charizard X<br />' +
+          		'<b>Catchphrase: </b>"May the best of you..turn to ashes."</center>');
+    },
+    
     commands: 'help',
 	h: 'help',
 	'?': 'help',
