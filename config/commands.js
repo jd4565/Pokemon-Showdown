@@ -2008,7 +2008,7 @@ var commands = exports.commands = {
     blue : 'blue', 
    	blue: function(target, room, user) {
         	if (!this.canBroadcast()) return;
-         	this.sendReplyBox('<center><img height="120" src="http://25.media.tumblr.com/b4f01fca213952c519a54358e651992f/tumblr_mibltiuCaA1rtatqpo1_500.gif">' +
+         	this.sendReplyBox('<center><img height="120" src="http://25.media.tumblr.com/fd1d0496402b0bdc8fe57bc5843f58a3/tumblr_mnuca8RwI31qhd8sao1_500.gif">' +
           		'<img src="http://i.imgur.com/nBA8fhl.gif" height="100">' +
           		'<img src="http://3.bp.blogspot.com/-ikPcvsi5iYc/Ux3OjIDrYRI/AAAAAAAAB7U/nhxCth-O9xw/s1600/tumblr_mveh1mETn61swxcu7o1_400.gif" height="100"><br />' +
           		'<b>Ace: </b>Charizard X and Gengar<br />' +
