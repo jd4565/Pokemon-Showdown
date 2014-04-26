@@ -1905,6 +1905,25 @@ var commands = exports.commands = {
         		'<b>Ace: </b>Spinda<br />' +
         		'<b>Catchphrase: </b>I like me a win.</center>');
     },
+    
+    aubbyxcat : 'aubbyxcat',
+      	aubbyxcat: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://1.bp.blogspot.com/-Yi6hEYrdx64/TjGZyonTlRI/AAAAAAAAAH4/YzCoC09f4pM/s1600/anime_cat_boy__s_image-174720.jpg">' +
+        		'<img src=http://i1365.photobucket.com/albums/r752/LynnHikaru/axc_zpsbcab5861.png" height="100">' +
+        		'<img src="http://img4.wikia.nocookie.net/__cb20120928005056/swordartonline/images/8/87/Kirito_Dual_Blades.png" height="100"><br />' +
+        		'<b>Ace: </b>Hawlucha<br />' +
+        		'<b>Catchphrase: </b>"I wanted my Princess Kitty to revive me, not this jester Psiker."</center>');
+    },
+    
+    aluutaxvale : 'aluutaxvale',
+   	aluutaxvale: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://images5.fanpop.com/image/photos/29800000/FrUk-yaoi-29855631-600-488.jpg">' +
+        		'<img src="http://i1365.photobucket.com/albums/r752/LynnHikaru/axv_zps2394d724.png" height="100">' +
+        		'<img src=http://ekladata.com/jo7KeBo-S9_qGaAVxplr4QZMe_c.gif" height="100"><br />' +
+        		'<b>Ace: </b>Emolga<br />' +
+        		'<b>Catchphrase: </b>"YOU CHEATED ON ME...WITH A WOMAN!"</center>');
                                 
    	haruko : 'haruko',
    	haruko: function(target, room, user) {
