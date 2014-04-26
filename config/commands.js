@@ -2011,7 +2011,7 @@ var commands = exports.commands = {
          	this.sendReplyBox('<center><img height="120" src="http://25.media.tumblr.com/b4f01fca213952c519a54358e651992f/tumblr_mibltiuCaA1rtatqpo1_500.gif">' +
           		'<img src="http://i.imgur.com/nBA8fhl.gif" height="100">' +
           		'<img src="http://3.bp.blogspot.com/-ikPcvsi5iYc/Ux3OjIDrYRI/AAAAAAAAB7U/nhxCth-O9xw/s1600/tumblr_mveh1mETn61swxcu7o1_400.gif" height="100"><br />' +
-          		'<b>Ace: </b>Charizard X<br />' +
+          		'<b>Ace: </b>Charizard X and Gengar<br />' +
           		'<b>Catchphrase: </b>"May the best of you..turn to ashes."</center>');
     },
     
