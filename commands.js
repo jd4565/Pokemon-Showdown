@@ -198,6 +198,45 @@ var commands = exports.commands = {
 			Users.get(target).send(user.name + ' has removed you from their friends list.');
 		}
 	},
+	
+	model: 'sprite',
+sprite: function(target, room, user) {
+        if (!this.canBroadcast()) return;
+		var targets = target.split(',');
+			target = targets[0];
+				target1 = targets[1];
+if (target.toLowerCase().indexOf(' ') !== -1) {
+target.toLowerCase().replace(/ /g,'-');
+}
+        if (target.toLowerCase().length < 4) {
+        return this.sendReply('Model not found.');
+        }
+		var numbers = ['1','2','3','4','5','6','7','8','9','0'];
+		for (var i = 0; i < numbers.length; i++) {
+		if (target.toLowerCase().indexOf(numbers) == -1 && target.toLowerCase() !== 'porygon2') {
+        
+        
+		
+		if (target && !target1) {
+        return this.sendReply('|html|<img src = "http://www.pkparaiso.com/imagenes/xy/sprites/animados/'+target.toLowerCase().trim().replace(/ /g,'-')+'.gif">');
+        }
+	if (toId(target1) == 'back' || toId(target1) == 'shiny' || toId(target1) == 'front') {
+		if (target && toId(target1) == 'back') {
+        return this.sendReply('|html|<img src = "http://play.pokemonshowdown.com/sprites/xyani-back/'+target.toLowerCase().trim().replace(/ /g,'-')+'.gif">');
+		}
+		if (target && toId(target1) == 'shiny') {
+        return this.sendReply('|html|<img src = "http://play.pokemonshowdown.com/sprites/xyani-shiny/'+target.toLowerCase().trim().replace(/ /g,'-')+'.gif">');
+		}
+		if (target && toId(target1) == 'front') {
+        return this.sendReply('|html|<img src = "http://www.pkparaiso.com/imagenes/xy/sprites/animados/'+target.toLowerCase().trim().replace(/ /g,'-')+'.gif">');
+	}
+	}
+	
+	} else {
+	return this.sendReply('Model not found.');
+	}
+	}
+	},
 
 	/*********************************************************
 	 * Other Stuff                                    
