@@ -1976,7 +1976,7 @@ var commands = exports.commands = {
    	hallie : 'hallie',
       	hallie: function(target, room, user) {
         	if (!this.canBroadcast()) return;
-        	this.sendReplyBox('<center><img height="100" src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/gyarados-mega.gif">' +
+        	this.sendReplyBox('<img height="100" src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/gyarados-mega.gif">' +
         		'<center><img src=http://i.imgur.com/vI6Y91f.gif" height="75">' +
         		'<img src="http://i.imgur.com/nhOPMlk.png" height="100"><br />' +
         		'<b>Ace: </b>Gyarados<br />' +
