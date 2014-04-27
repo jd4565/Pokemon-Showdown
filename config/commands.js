@@ -1919,7 +1919,7 @@ var commands = exports.commands = {
     aluutaxvale : 'aluutaxvale',
    	aluutaxvale: function(target, room, user) {
         	if (!this.canBroadcast()) return;
-        	this.sendReplyBox('<center><img src="http://images5.fanpop.com/image/photos/29800000/FrUk-yaoi-29855631-600-488.jpg" height="100">' +
+        	this.sendReplyBox('<center><img src="http://images5.fanpop.com/image/photos/29800000/FrUk-yaoi-29855631-600-488.jpg" height="120">' +
         		'<img src="http://i1365.photobucket.com/albums/r752/LynnHikaru/axv_zps2394d724.png" height="100">' +
         		'<img src=http://ekladata.com/jo7KeBo-S9_qGaAVxplr4QZMe_c.gif" height="100"><br />' +
         		'<b>Ace: </b>Emolga<br />' +
