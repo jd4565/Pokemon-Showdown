@@ -1977,7 +1977,7 @@ var commands = exports.commands = {
       	hallie: function(target, room, user) {
         	if (!this.canBroadcast()) return;
         	this.sendReplyBox('<center><img height="120" src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/gyarados-mega.gif">' +
-        		'<img src=http://i.imgur.com/H7nUQsh.gif" height="50">' +
+        		'<img src=http://i.imgur.com/vI6Y91f.gif" height="50">' +
         		'<img src="http://i.imgur.com/nhOPMlk.png" height="100"><br />' +
         		'<b>Ace: </b>Gyarados<br />' +
         		'<b>Catchphrase: </b>"I will always flow, water by water"</center>');
