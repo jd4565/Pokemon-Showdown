@@ -55,6 +55,17 @@ exports.BattleFormats = {
 			'Zygarde'
 		]
 	},
+	slowmonsclause: {
+	effecttype: 'Rule',
+	onStart: function(target, source) {
+                                this.add('rule', 'Tricky Arena: Trick Room exists by default.','-fieldstart', 'move: Trick Room', '[of] '+source);
+								this.add('-message', 'The dimensions were twisted!');
+                                this.getStatCallback = function(stat, statName) {
+
+                                        return stat;
+										}
+										}
+										},
 	standarddoubles: {
 		effectType: 'Banlist',
 		ruleset: ['Species Clause', 'OHKO Clause', 'Moody Clause', 'Evasion Abilities Clause', 'Evasion Moves Clause', 'Endless Battle Clause', 'HP Percentage Mod'],
