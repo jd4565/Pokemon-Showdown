@@ -1929,11 +1929,11 @@ var commands = exports.commands = {
    	haruko : 'haruko',
    	haruko: function(target, room, user) {
         	if (!this.canBroadcast()) return;
-        	this.sendReplyBox('<center><img height="110" src="http://31.media.tumblr.com/2beffec8c82815d7ce9bced0596bbeb4/tumblr_ms5xy54W4b1s1syfso1_500.gif">' +
+        	this.sendReplyBox('<center><img height="100" src="http://31.media.tumblr.com/2beffec8c82815d7ce9bced0596bbeb4/tumblr_ms5xy54W4b1s1syfso1_500.gif">' +
         		'<img src="http://i.imgur.com/kzCkWh2.png" height="50">' +
-        		'<img src="http://24.media.tumblr.com/eae21cecedab8952379a03c023388625/tumblr_mqb3o9scfu1qcrbfzo1_500.gif" height="110"><br />' +
+        		'<img src="http://24.media.tumblr.com/eae21cecedab8952379a03c023388625/tumblr_mqb3o9scfu1qcrbfzo1_500.gif" height="100"><br />' +
         		'<b>Ace: </b>Politoed<br />' +
-        		'<b>Catchphrase: </b>Politoed, together we shall conquer all the girls hearts. Just you wait.</center>');
+        		'<b>Catchphrase: </b>"Politoed, together we shall conquer all the girls hearts. Just you wait."</center>');
     },
                                 
    	Politoed : 'Politoed',
