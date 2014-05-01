@@ -1936,15 +1936,6 @@ var commands = exports.commands = {
         		'<b>Catchphrase: </b>"Politoed, together we shall conquer all the girls hearts. Just you wait."</center>');
     },
                                 
-   	Politoed : 'Politoed',
-   	Politoed: function(target, room, user) {
-        	if (!this.canBroadcast()) return;
-        	this.sendReplyBox('<center><img height="110" src="http://fc07.deviantart.net/fs70/f/2011/202/2/b/shiny_politoed_commission_by_x_squishystar_x-d418kkz.gif">' +
-        		'<img src="http://i.imgur.com/BnKPlOa.gif" height="100">' +
-                        '<b>Name: </b>Prince Charming<br />' +
-        		'<b>Catchphrase: </b>Politoed!</center>');
-    },
-                                
    	aluuta : 'aluuta',
    	aluuta: function(target, room, user) {
         	if (!this.canBroadcast()) return;
