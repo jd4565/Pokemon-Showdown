@@ -1825,6 +1825,16 @@ var commands = exports.commands = {
         		'<b>Ace: </b>Portgas D. Ace<br />' +
         		'<b>Catchphrase: </b>One Piece 4Ever.</center>');
     },
+                    
+        emi :  'emi',
+   	emi: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://hdimagesinfo.com/wp-content/uploads/2013/10/Girl-Anime-64.jpg">' +
+        		'<img src="http://oi61.tinypic.com/27xe9hv.jpg" height="100">' +
+        		'<img src="http://www.pokedit.com/boards/ckfinder/userfiles/2/images/mega_pokemons_by_suzuran.jpg" height="100"><br />' +
+        		'<b>Ace: </b>Mega Lucario and Mega Blaziken<br />' +
+        		'<b>Catchphrase: </b>The amount of thought you put into challenging me? My guess is none.</center>');
+    },
             
    	anabel : 'anabel',
    	anabel: function(target, room, user) {
