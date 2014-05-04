@@ -2029,8 +2029,8 @@ var commands = exports.commands = {
    	vsserena: function(target, room, user) {
         	if (!this.canBroadcast()) return;
          	this.sendReplyBox('<center><img height="120" src="http://i1365.photobucket.com/albums/r752/LynnHikaru/vss_zps0a562622.png">' +
-          		'<img src="http://i109.photobucket.com/albums/n50/karatehorse612/Anime/Cinderella-3.jpg" height="150">' +
-          		'<b>Serena Theme</b> - <a href="https://www.youtube.com/watch?v=FZZuYtnHqks">Click Here</a><br />'+
+          		'<img src="http://i109.photobucket.com/albums/n50/karatehorse612/Anime/Cinderella-3.jpg" height="180">' +
+          		'<b>vs Serena Theme</b> - <a href="https://www.youtube.com/watch?v=FZZuYtnHqks">Click Here</a><br />'+
           		'<b>Quote: </b>"Maybe my fairy tale has a different ending than I dreamed it would. But thats ok"</center>');
     },
     
