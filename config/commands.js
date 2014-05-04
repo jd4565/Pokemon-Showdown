@@ -2025,6 +2025,16 @@ var commands = exports.commands = {
           		'<b>Catchphrase: </b>"May the best of you..turn to ashes."</center>');
     },
     
+    vsserena : 'vsserena', 
+   	vsserena: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+         	this.sendReplyBox('<center><img height="120" src="http://i109.photobucket.com/albums/n50/karatehorse612/Anime/Cinderella-3.jpg">' +
+          		'<img src="http://i1365.photobucket.com/albums/r752/LynnHikaru/vsserena_zps895dbe77.png" height="100">' +
+          		'<img src="" height="100"><br />' +
+          		'<b>Ace: </b>Gardevoir<br />' +
+          		'<b>Quote: </b>"Maybe my fairy tale has a different ending than I dreamed it would. But thats ok"</center>');
+    },
+    
     commands: 'help',
 	h: 'help',
 	'?': 'help',
