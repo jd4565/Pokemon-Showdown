@@ -13,6 +13,12 @@ exports.Formats = [
 		team: 'random',
 		ruleset: ['PotD', 'Pokemon', 'Sleep Clause Mod', 'HP Percentage Mod']
 	},
+		name: "Red like Roses",
+		section: "Other Metagames",
+
+		ruleset: ['Pokemon', 'Standard', 'Team Preview'],
+		banlist: ['Uber', 'Gengarite', 'Kangaskhanite']
+	},
 	{
 		name: "Unrated Random Battle",
 		section: "XY Singles",
@@ -313,12 +319,6 @@ exports.Formats = [
 		mod: 'theorymon',
 		ruleset: ['Pokemon', 'Standard', 'Team Preview'],
 		banlist: ['Uber', 'Soul Dew', 'Gengarite', 'Kangaskhanite', 'Lucarionite']
-	},
-		name: "Red like Roses",
-		section: "Other Metagames",
-
-		ruleset: ['Pokemon', 'Standard', 'Team Preview'],
-		banlist: ['Uber', 'Gengarite', 'Kangaskhanite']
 	},
 	{
 		name: "CAP",
