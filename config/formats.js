@@ -312,10 +312,9 @@ exports.Formats = [
 		]
 	},
 	{
-		name: "Inverse Battle",
+		name: "OU According to Ruby",
 		section: "Other Metagames",
 
-		mod: 'inverse',
 		ruleset: ['Pokemon', 'Standard', 'Team Preview'],
 		banlist: ['Kangaskhanite', 'Soul Dew',
 			'Arceus',
