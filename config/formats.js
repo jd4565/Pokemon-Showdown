@@ -318,7 +318,7 @@ exports.Formats = [
 		ruleset: ['Pokemon', 'Standard', 'Team Preview'],
 		banlist: ['Kangaskhanite', 'Soul Dew',
 			'Arceus',
-			'Darkrai',
+			'Pinsirite',
 			'Deoxys-Attack',
 			'Deoxys',
 			'Gengarite',
@@ -331,11 +331,11 @@ exports.Formats = [
 			'Mewtwo',
 			'Palkia',
 			'Rayquaza',
-			'Reshiram',
-			'Shaymin-Sky',
+			'Flash Fire',
+			'Mawilite'
 			'Kyurem-White',
-			'Xerneas',
-			'Yveltal',
+			'Geomancy',
+			'Cosmic Power',
 			'Zekrom'
 		]
 	},
