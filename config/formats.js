@@ -315,7 +315,7 @@ exports.Formats = [
 		name: "OU According to Ruby",
 		section: "Other Metagames",
 
-		ruleset: ['Pokemon', 'Standard', 'Team Preview'],
+		ruleset: ['Pokemon', 'Team Preview'],
 		banlist: ['Kangaskhanite', 'Magic Guard',
 			'Arceus',
 			'Darkrai',
