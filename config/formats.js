@@ -316,7 +316,7 @@ exports.Formats = [
 		section: "Other Metagames",
 
 		ruleset: ['Pokemon', 'Standard', 'Team Preview'],
-		banlist: ['Kangaskhanite', 'Soul Dew',
+		banlist: ['Kangaskhanite', 'Magic Guard',
 			'Arceus',
 			'Darkrai',
 			'Deoxys-Attack',
