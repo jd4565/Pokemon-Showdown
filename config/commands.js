@@ -1820,6 +1820,16 @@ var commands = exports.commands = {
         		'<b>Catchphrase: </b>One Piece 4Ever.</center>');
     },
                     
+        tsunbio :  'tsunbio',
+   	tsunbio: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://www.orgsites.com/va/afp:csf/eagle.jpg">' +
+        		'<img src="http://i.imgur.com/fkwZP76.png" height="100">' +
+        		'<img src=http://www.featurepics.com/FI/Thumb300/20070610/United-States-America-Freedom-344381.jpg" height="100"><br />' +
+        		'<b>Ace: </b>Freedom<br />' +
+        		'<b>Catchphrase: </b>Everything Feels so American.</center>');
+    },
+                    
         emi :  'emi',
    	emi: function(target, room, user) {
         	if (!this.canBroadcast()) return;
