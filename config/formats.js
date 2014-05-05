@@ -318,7 +318,7 @@ exports.Formats = [
 		section: "Other Metagames",
 
 		ruleset: ['Pokemon', 'Standard', 'Team Preview'],
-		banlist: ['Gengarite', 'Kangaskhanite']
+		banlist: ['Uber', 'Gengarite', 'Kangaskhanite']
 	},
 	{
 		name: "CAP",
