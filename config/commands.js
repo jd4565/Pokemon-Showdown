@@ -639,10 +639,13 @@ var commands = exports.commands = {
 
 	forum: function(target, room, user) {
 		if (!this.canBroadcast()) return;
-		this.sendReplyBox(' <b>League Forum</b> - <a href="http://leaf-league.forumotion.com/">Click Here</a> Fourm<br />');
-
+		this.sendReplyBox(' <b>League Forum</b> - <a href="http://leaf-league.forumotion.com/">Click Here</a> Forum<br />');
 	},
 
+	news: function(target, room, user) {
+		if (!this.canBroadcast()) return;
+		this.sendReplyBox(' <b>League News</b> - <a href="http://leaf-league.weebly.com/news-and-notices.html/">Click Here</a><br />');
+	},
 
 	opensource: function(target, room, user) {
 		if (!this.canBroadcast()) return;
