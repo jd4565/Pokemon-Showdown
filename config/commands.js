@@ -1977,7 +1977,7 @@ var commands = exports.commands = {
         	'<img height="100" src="http://i.imgur.com/e3Flqha.gif">' +
         	'<img height="100" src="http://i.imgur.com/e3Flqha.gif">' +
         	'<img height="100" src="http://i.imgur.com/e3Flqha.gif">' +
-        	'<img height="100" src="http://i.imgur.com/e3Flqha.gif">' +
+        	'<img height="100" src="http://i.imgur.com/e3Flqha.gif">' +);
     },
                                 
    	aluuta : 'aluuta',
