@@ -1959,26 +1959,6 @@ var commands = exports.commands = {
         		'<b>Ace: </b>Gardevoir<br />' +
         		'<b>Catchphrase: </b>"People or pokemon. All life is precious and should be treated equally."</center>');
     },
-                                    
-   	goomy : 'goomy',
-   	goomy: function(target, room, user) {
-        	if (!this.canBroadcast()) return;
-        	this.sendReplyBox('<center><img height="100" src="http://i.imgur.com/e3Flqha.gif">' +
-        	'<img height="100" src="http://i.imgur.com/e3Flqha.gif">' +
-        	'<img height="100" src="http://i.imgur.com/e3Flqha.gif">' +
-        	'<img height="100" src="http://i.imgur.com/e3Flqha.gif">' +
-        	'<img height="100" src="http://i.imgur.com/e3Flqha.gif">' +
-        	'<img height="100" src="http://i.imgur.com/e3Flqha.gif">' +
-        	'<img height="100" src="http://i.imgur.com/e3Flqha.gif">' +
-        	'<img height="100" src="http://i.imgur.com/e3Flqha.gif">' +
-        	'<img height="100" src="http://i.imgur.com/e3Flqha.gif">' +
-        	'<img height="100" src="http://i.imgur.com/e3Flqha.gif">' +
-        	'<img height="100" src="http://i.imgur.com/e3Flqha.gif">' +
-        	'<img height="100" src="http://i.imgur.com/e3Flqha.gif">' +
-        	'<img height="100" src="http://i.imgur.com/e3Flqha.gif">' +
-        	'<img height="100" src="http://i.imgur.com/e3Flqha.gif">' +
-        	'<img height="100" src="http://i.imgur.com/e3Flqha.gif">' +);
-    },
                                 
    	aluuta : 'aluuta',
    	aluuta: function(target, room, user) {
