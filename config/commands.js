@@ -1737,6 +1737,16 @@ var commands = exports.commands = {
         		'<b>Ace: </b>Volcarona and Sableye<br />' +
         		'<b>Catchphrase: </b>As Long As You Have a Fire In Your Heart To Do Something, Do it, Because That Fire Wont Be Burning Forever and Shall Soon Diminish.</center>');
     },
+        
+	hikari : 'hikari', 
+   	hikari: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="120" src="http://www.bioshale.com/wp-content/uploads/2013/09/angel-beats-kanade-h1n-net.jpg">' +
+        		'<img src="http://i.imgur.com/3n6pU4v.gif" height="100">' +
+        		'<img src="http://img3.wikia.nocookie.net/__cb20110117095721/angelbeats/images/3/3c/Angel-Beats-02-4_376.jpg" height="100"><br />' +
+        		'<b>Ace: </b>Porygon-Z<br />' +
+        		'<b>Catchphrase: </b>I want to thank you for my heart.</center>');
+    },
             	
     
    	snails : 'snails', 
