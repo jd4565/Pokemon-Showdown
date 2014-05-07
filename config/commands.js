@@ -1738,8 +1738,8 @@ var commands = exports.commands = {
         		'<b>Catchphrase: </b>As Long As You Have a Fire In Your Heart To Do Something, Do it, Because That Fire Wont Be Burning Forever and Shall Soon Diminish.</center>');
     },
         
-	hikari : 'hikari', 
-   	hikari: function(target, room, user) {
+	angel : 'angel', 
+   	angel: function(target, room, user) {
         	if (!this.canBroadcast()) return;
         	this.sendReplyBox('<center><img height="120" src="http://www.bioshale.com/wp-content/uploads/2013/09/angel-beats-kanade-h1n-net.jpg">' +
         		'<img src="http://i.imgur.com/3n6pU4v.gif" height="100">' +
