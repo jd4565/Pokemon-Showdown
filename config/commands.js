@@ -2049,6 +2049,16 @@ var commands = exports.commands = {
           		'<b>Catchphrase: </b>"May the best of you..turn to ashes."</center>');
     },
     
+    ron : 'ron', 
+   	ron: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+         	this.sendReplyBox('<center><img height="120" src="http://24.media.tumblr.com/tumblr_mbmx44B8t91qczibyo1_500.gif">' +
+          		'<img src="http://i.imgur.com/2jX5oJP.png" height="100">' +
+          		'<img src="http://play.pokemonshowdown.com/sprites/xyani/keldeo.gif" height="100"><br />' +
+          		'<b>Ace: </b>Keldeo and Conkeldurr<br />' +
+          		'<b>Catchphrase: </b>"Its Better to Master the Cards youre Holding, than to complain about the ones your opponent was dealt."</center>');
+    },
+    
     vsserena : 'vsserena', 
    	vsserena: function(target, room, user) {
         	if (!this.canBroadcast()) return;
