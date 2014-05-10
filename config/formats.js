@@ -322,7 +322,7 @@ exports.Formats = [
 			'Deoxys-Attack',
 			'Deoxys',
 			'Gengarite',
-			'Giratina', 'Giratina-Origin',
+			'Gale Wings',
 			'Groudon',
 			'Ho-Oh',
 			'Kyogre',
