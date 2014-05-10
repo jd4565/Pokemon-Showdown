@@ -334,7 +334,7 @@ exports.Formats = [
 			'Pinsirite',
 			'Shaymin-Sky',
 			'Kyurem-White',
-			'Xerneas',
+			'Choice Band',
 			'Flash Fire',
 			'Mawilite'
 		]
