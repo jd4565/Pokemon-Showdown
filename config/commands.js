@@ -1169,6 +1169,16 @@ var commands = exports.commands = {
 	 	if (!this.canBroadcast()) return;
 	 	return this.sendReply('|raw|<center><img width="300" height="169" src="http://24.media.tumblr.com/d4bfc0ce9509a2c2a2695cefdfe7816d/tumblr_mg828id4kQ1s1sk4do1_500.gif"></center>');
 	 },
+	     	
+    	tsunbox: function(target, room, user) {
+        if (!this.canBroadcast()) return;
+        this.sendReply('|raw|<img src="http://i.imgur.com/Df5hZ9S.png" width="30" height="30" align="left"><img src="http://i.imgur.com/Df5hZ9S.png" width="30" height="30" align="right">' +
+                '<center><h1><font color="blue"><u>Tsunbios\'s Music Box</u></color></h1></center>' +
+                '<center><b><a href="https://www.youtube.com/watch?v=guG9cVs3ms4">Real american</a><br>' +
+                 '<center><b><a href="https://www.youtube.com/watch?v=guG9cVs3ms4">Real american</a><br>' +
+                 '<center><b><a href="https://www.youtube.com/watch?v=guG9cVs3ms4">Real american</a><br>' +
+                '<center><b><a href="https://www.youtube.com/watch?v=guG9cVs3ms4">Real american</a><br>' +                '<img src="http://i.imgur.com/Df5hZ9S.png" width="30" height="30" align="left"><img src="http://i.imgur.com/Df5hZ9S.png" width="30" height="30" align="right"><br><br>');
+    	},
 	 
 	 tpp: function(target, room, user) {
 	 	if (!this.canBroadcast()) return;
