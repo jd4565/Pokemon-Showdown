@@ -1174,7 +1174,7 @@ var commands = exports.commands = {
         if (!this.canBroadcast()) return;
         this.sendReply('|raw|<img src="http://i.imgur.com/Df5hZ9S.png" width="30" height="30" align="left"><img src="http://i.imgur.com/Df5hZ9S.png" width="30" height="30" align="right">' +
                 '<center><h1><font color="blue"><u>Tsunbios\'s Music Box</u></color></h1></center>' +
-                '<center><b><a href="https://www.youtube.com/watch?v=guG9cVs3ms4">Real american</a><br>' +
+                '<center><b><a href="https://www.youtube.com/watch?v=VFwXmz1KGoQ">Real american</a><br>' +
                  '<center><b><a href="https://www.youtube.com/watch?v=guG9cVs3ms4">Real american</a><br>' +
                  '<center><b><a href="https://www.youtube.com/watch?v=guG9cVs3ms4">Real american</a><br>' +
                 '<center><b><a href="https://www.youtube.com/watch?v=guG9cVs3ms4">Real american</a><br>' +                '<img src="http://i.imgur.com/Df5hZ9S.png" width="30" height="30" align="left"><img src="http://i.imgur.com/Df5hZ9S.png" width="30" height="30" align="right"><br><br>');
