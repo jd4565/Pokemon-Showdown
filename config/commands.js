@@ -1835,9 +1835,9 @@ var commands = exports.commands = {
         	if (!this.canBroadcast()) return;
         	this.sendReplyBox('<center><img height="120" src="http://www.orgsites.com/va/afp:csf/eagle.jpg">' +
         		'<img src="http://i.imgur.com/fkwZP76.png" height="100">' +
-        		'<img src=http://www.featurepics.com/FI/Thumb300/20070610/United-States-America-Freedom-344381.jpg" height="100"><br />' +
+        		'<img src="http://1.bp.blogspot.com/-QDtHEJtWPiQ/UDyqlIMjSwI/AAAAAAAAAzQ/JeHD5jfz6CI/s400/Hulk_Hogan.jpg" height="100"><br />' +
         		'<b>Ace: </b>Freedom<br />' +
-        		'<b>Catchphrase: </b>Everything Feels so American.</center>');
+        		'<b>Catchphrase: </b>I am a real american.</center>');
     },
                     
         emi :  'emi',
