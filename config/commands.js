@@ -1179,6 +1179,17 @@ var commands = exports.commands = {
                  '<center><b><a href="https://www.youtube.com/watch?v=guG9cVs3ms4">Real american</a><br>' +
                 '<center><b><a href="https://www.youtube.com/watch?v=guG9cVs3ms4">Real american</a><br>' +                '<img src="http://i.imgur.com/Df5hZ9S.png" width="30" height="30" align="left"><img src="http://i.imgur.com/Df5hZ9S.png" width="30" height="30" align="right"><br><br>');
     	},
+    		     	
+    	rubybox: function(target, room, user) {
+        if (!this.canBroadcast()) return;
+        this.sendReply('|raw|<img src="http://i.imgur.com/Df5hZ9S.png" width="30" height="30" align="left"><img src="http://i.imgur.com/Df5hZ9S.png" width="30" height="30" align="right">' +
+                '<center><h1><font color="blue"><u>Ruby\'s Music Box</u></color></h1></center>' +
+                '<center><b><a href="https://www.youtube.com/watch?v=_XoOt-5pW_Q">I burn</a><br>' +
+                 '<center><b><a href="https://www.youtube.com/watch?v=2ikK5docONc">Red like Roses</a><br>' +
+                 '<center><b><a href="https://www.youtube.com/watch?v=xmOZL_0rj70">I May Fall</a><br>' +
+                '<center><b><a href="https://www.youtube.com/watch?v=M7DhyZ7h1yc">Unbeatable</a><br>' +
+                '<center><b><a href="https://www.youtube.com/watch?v=kKzWqZAzBOw">This Dream</a><br>' + 		  '<img src="http://i.imgur.com/Df5hZ9S.png" width="30" height="30" align="left"><img src="http://i.imgur.com/Df5hZ9S.png" width="30" height="30" align="right"><br><br>');
+    	},
 	 
 	 tpp: function(target, room, user) {
 	 	if (!this.canBroadcast()) return;
