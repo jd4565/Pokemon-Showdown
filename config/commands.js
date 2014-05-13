@@ -1704,7 +1704,7 @@ var commands = exports.commands = {
 		this.sendReplyBox('frontier: Ace<br \>' +
 			'Ace: Gengar <br \>' +
 			'Quote: Integrity first, Service before self, Excellence in all we do.<br \>' +
-			'<img src="http://i.imgur.com/4JMQBUV.gif">')
+			'<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHTwPoMdpfT1b8WwrY24qFWXAV5LoTgObFvTKcJiYD84PUhP4z">')
 	},
 
 	kolotos: 'kolotos',
