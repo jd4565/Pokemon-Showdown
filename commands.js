@@ -1339,7 +1339,7 @@ var commands = exports.commands = {
 			' forum <a href="http://leaf-league.forumotion.com/">here</a>.<br><br>The league is home of two regions: <font color="green">Celestia</font>' +
 			' and <font color="green">Saraphia</font> home to their own Gym Leaders, Elite Four and Champion!<br><br>' +
 			'<i><font size="0.5" color="green">"Tempest has been lain to ashes but is reborn like a phoenix. The Phoenix succumbs to the grace of a leaf ' +
-			'blowing in the wind; and like a leaf you ride the winds of fate elegantly."</font></i></center>');
+			'blowing in the wind; and like a leaf you ride the winds of fate elegantly. Fate calls that leaf to lie upon a jasmine, which shall ignite with refined oppurtunity."</font></i></center>');
 		}
 	},
 
