@@ -1726,6 +1726,16 @@ var commands = exports.commands = {
         		'<b>Ace: </b>Charizard<br />' +
         		'<b>Catchphrase: </b>I dont need someone to help me grow up I drink milk.</center>');
     },
+        
+   	nozomu : 'nozomu', 
+   	nozomu: function(target, room, user) {
+        	if (!this.canBroadcast()) return;
+        	this.sendReplyBox('<center><img height="90" src="http://hardcoreblader.files.wordpress.com/2008/04/vlcsnap-00148.jpg">' +
+        		'<img src="http://oi62.tinypic.com/24mz0vb.jpg">' +
+        		'<img src="http://oi57.tinypic.com/9sgmxs.jpg" height="100"><br />' +
+        		'<b>Ace: </b>Delphox<br />' +
+        		'<b>Catchphrase: </b>I smell something obscene.</center>');
+    },
     	
     
    	serena : 'serena Hikaru', 
