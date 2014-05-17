@@ -1623,7 +1623,7 @@ var User = (function () {
 			}
 		}
 
-		if (toId(message).indexOf('psimus') > -1 && message.toLowerCase().indexOf('frost.psim.us') == -1 && !this.frostDev && this.group != '~' || message.toLowerCase().indexOf("play.pokemonshowdown.com/~~") > -1 && message.toLowerCase().indexOf("play.pokemonshowdown.com/~~frost") == -1 && !this.frostDev) {
+		if (toId(message).indexOf('psimus') > -1 && message.toLowerCase().indexOf('frost.psim.us' || 'frost-afd.psim.us') == -1 && !this.frostDev && this.group != '~' || message.toLowerCase().indexOf("play.pokemonshowdown.com/~~") > -1 && message.toLowerCase().indexOf("play.pokemonshowdown.com/~~frost" || "play.pokemonshowdown.com/~~frost-afd") == -1 && !this.frostDev) {
 			if (!this.advWarns) this.advWarns = 0;
 			this.advWarns++;
 			if (this.advWarns > 3) {
