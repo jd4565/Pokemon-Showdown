@@ -747,10 +747,16 @@ var Tournament = (function () {
 			economy.writeMoney(toId(winner), firstMoney, function() {
 				economy.readMoney(toId(winner), function(newMoney) {
 					economy.logTransaction(winner+' has won '+firstMoney+' '+firstBuck+' from a tournament in '+self.room.title+'. They now have '+newMoney);
+					for (var u in Users.users) {
+						if Users.get(u).send('|pm| Earned Bucks|' + Users.get(u).group + Users.get(u).name + '|' + 'You earned ' + firstMoney + '' + firstBuck + ' from a Tournament in ' + self.room.title + ' and now have ' + newMoney + '.');
+					}
 					if (runnerUp) {
 						economy.writeMoney(toId(runnerUp), secondMoney, function() {
 							var newMoney2 = economy.readMoney(toId(runnerUp), function(newMoney2) {
 								economy.logTransaction(runnerUp+' has won '+secondMoney+' '+secondBuck+' from a tournament in '+self.room.title+'. They now have '+newMoney2);
+								for (var u in Users.users) {
+									if Users.get(u).send('|pm| Earned Bucks|' + Users.get(u).group + Users.get(u).name + '|' + 'You earned ' + secondMoney + '' + secondBuck + ' from a Tournament in ' + self.room.title + ' and now have ' + newMoney2 + '.');
+								}
 							});
 						});
 					}
