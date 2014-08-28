@@ -1531,19 +1531,19 @@ Rooms.lobby = rooms.lobby;
 
 checkInactiveRooms = setInterval(function() {
 	for (var u in Rooms.rooms) {
-		if (Rooms.rooms[u].type !== 'chat' || Rooms.rooms[u].protect) continue;
-		if (Rooms.rooms[u].messageCount < 50) {
-			Rooms.rooms[u].active = false;
+		if (Rooms.rooms[id].type !== 'chat' || Rooms.rooms[id].protect) continue;
+		if (Rooms.rooms[id].messageCount < 50) {
+			Rooms.rooms[id].active = false;
 		}
 	}
 }, 1*60*1000);
 
 deleteInactiveRooms = setInterval(function() {
 	for (var u in Rooms.rooms) {
-		if (Rooms.rooms[u].type !== 'chat' || room.protect) continue;
-		if (!Rooms.rooms[u].active && Rooms.rooms[u].messageCount < 50) {
-			Rooms.global.deregisterChatRoom(Rooms.rooms[u].id);
-			Rooms.rooms[u].addRaw('<font color=red><b>This room has been automatically deleted due to inactivity.</b></font>');
+		if (Rooms.rooms[id].type !== 'chat' || Rooms.rooms[id].protect) continue;
+		if (!Rooms.rooms[id].active && Rooms.rooms[id].messageCount < 50) {
+			Rooms.global.deregisterChatRoom(Rooms.rooms[id]);
+			Rooms.rooms[id].addRaw('<font color=red><b>This room has been automatically deleted due to inactivity.</b></font>');
 		}
 	}
 }, 4320*60*1000);
