@@ -866,6 +866,7 @@ var commands = {
 			if (tournament.setAutoDisqualifyTimeout(timeout * 60 * 1000, this)) {
 				this.privateModCommand("(The tournament auto disqualify timeout was set to " + params[0] + " by " + user.name + ")");
 			}
+			user.send('Kindly run `/tour runautodq` for the timeout to function.');
 		},
 		runautodq: function (tournament) {
 			tournament.runAutoDisqualify(this);
