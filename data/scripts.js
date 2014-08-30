@@ -1748,16 +1748,19 @@ exports.BattleScripts = {
 		var typeComboCount = {};
 		var baseFormes = {};
 		var uberCount = 0;
-		var bannedPokemon = ['Feebas','Magikarp','Caterpie','Weedle','Igglybuff','Sunkern','Wurmple','Burmy','Combee', 'Scatterbug'];
+		var bannedPokemon = ['Feebas', 'Magikarp', 'Caterpie', 'Weedle', 'Igglybuff', 'Sunkern', 'Wurmple', 'Burmy', 'Combee', 'Scatterbug'];
+		var bannedAbility = ['Moody'];
 
 		for (var i = 0; i < keys.length && pokemonLeft < 6; i++) {
 			var template = this.getTemplate(keys[i]);
 			if (!template || !template.name || !template.types) continue;
 			var tier = template.tier;
+			var ability = template.ability;
 
 			if (tier !== 'LC' && tier !== 'LC Uber') continue;
 			if (tier === 'LC Uber' && uberCount > 1 && Math.random() * 5 > 1) continue;
 			if (bannedPokemon.indexOf(template.name) > -1) continue;
+			if (bannedAbility.indexOf(ability.name) > -1) continue;
 
 			// Not available on XY
 			if (template.species === 'Pichu-Spiky-eared') continue;
