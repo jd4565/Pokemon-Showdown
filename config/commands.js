@@ -343,9 +343,11 @@ var commands = exports.commands = {
 	pokedex: 'data',
 	details: 'data',
 	dt: 'data',
+	randompokemon: 'data',
+	randp: 'data',
 	data: function (target, room, user, connection, cmd) {
 		if (!this.canBroadcast()) return;
-
+		if (cmd === 'randompokemon' || cmd === 'randp') target = (Math.floor(Math.random()*721)+1);
 		var buffer = '';
 		var targetId = toId(target);
 		if (targetId === '' + parseInt(targetId)) {
