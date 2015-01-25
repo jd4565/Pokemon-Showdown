@@ -1928,6 +1928,7 @@ var commands = exports.commands = {
 	},
 
 	eating: 'away',
+	mobile: 'away',
 	gaming: 'away',
 	sleep: 'away',
 	work: 'away',
@@ -1941,6 +1942,10 @@ var commands = exports.commands = {
 		var t = 'Ⓐⓦⓐⓨ';
 		var t2 = 'Away';
 		switch (cmd) {
+			case 'mobile':
+			t = 'ⓜⓞⓑⓘⓛⓔ';
+			t = 'Mobile';
+			break;
 			case 'busy':
 			t = 'Ⓑⓤⓢⓨ';
 			t2 = 'Busy';
