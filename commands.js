@@ -1944,7 +1944,7 @@ var commands = exports.commands = {
 		switch (cmd) {
 			case 'mobile':
 			t = 'ⓜⓞⓑⓘⓛⓔ';
-			t = 'Mobile';
+			t2 = 'Mobile';
 			break;
 			case 'busy':
 			t = 'Ⓑⓤⓢⓨ';
