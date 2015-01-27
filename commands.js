@@ -211,7 +211,7 @@ var commands = exports.commands = {
 
 		var date = Date();
 		var toldBy = user.getIdentity();
-		var tellMessage = '|raw|' + date.substring(0, date.indexOf('GMT') - 1) + ' - <b>' + Tools.escapeHTML(toldBy) + '</b> said: ' + Tools.escapeHTML(message);
+		var tellMessage = '|raw|' + date.substring(0, date.indexOf('GMT') - 1) + ' - <b>' + toldBy + '</b> said: ' + Tools.escapeHTML(message);
 		tells[toId(targetUser)].add(tellMessage);
 
 		return this.sendReply('Message "' + message + '" sent to ' + targetUser + '.');
@@ -291,19 +291,25 @@ var commands = exports.commands = {
 		switch (cmd) {
 		case 'privateroom':
 			if (!this.can('makeroom')) return;
-			if (room.isOfficial) return this.sendReply('Official rooms can not be secret.');
-			if (room.isPublic) delete room.isPublic;
+			// if (room.isOfficial) return this.sendReply('Official rooms can not be secret.');
+			/*if (room.chatRoomData) {
+				delete room.chatRoomData.isPublic;
+				Rooms.global.writeChatRoomData();
+			}*/
 			setting = true;
 			break;
 		default:
 			if (!this.can('privateroom', null, room)) return;
-			if (room.isOfficial) return this.sendReply('Official rooms can not be secret.');
+			// if (room.isOfficial) return this.sendReply('Official rooms can not be secret.');
 			if (room.isPrivate === true) {
 				if (this.can('makeroom'))
 					this.sendReply("This room is a secret room. Use /privateroom to toggle instead.");
 				return;
 			}
-			if (room.isPublic) delete room.isPublic;
+			/*if (room.chatRoomData) {
+				delete room.chatRoomData.isPublic;
+				Rooms.global.writeChatRoomData();
+			}*/
 			setting = 'hidden';
 			break;
 		}
@@ -311,14 +317,16 @@ var commands = exports.commands = {
 		if (target === 'off') {
 			delete room.isPrivate;
 			this.addModCommand("" + user.name + " made this room public.");
-			room.isPublic = true;
 			if (room.chatRoomData) {
 				delete room.chatRoomData.isPrivate;
 				Rooms.global.writeChatRoomData();
 			}
 		} else {
-			if (room.isOfficial) return this.sendReply('Official rooms can not be secret.');
-			if (room.isPublic) delete room.isPublic;
+			// if (room.isOfficial) return this.sendReply('Official rooms can not be secret.');
+			/*if (room.chatRoomData) {
+				delete room.chatRoomData.isPublic;
+				Rooms.global.writeChatRoomData();
+			}*/
 			room.isPrivate = setting;
 			this.addModCommand("" + user.name + " made this room " + (setting === true ? 'secret' : setting) + ".");
 			if (room.chatRoomData) {
@@ -381,9 +389,9 @@ var commands = exports.commands = {
 		if (!room.chatRoomData) {
 			return this.sendReply("/officialroom - This room can't be made official");
 		}
-		if (!room.isPublic) {
+		/*if (!room.chatRoomData.isPublic) {
 			return this.sendReply("/officialroom - Secret rooms can't be made official.");
-		}
+		}*/
 		if (target === 'off') {
 			delete room.isOfficial;
 			this.addModCommand("" + user.name + " made this chat room unofficial.");
@@ -432,18 +440,19 @@ var commands = exports.commands = {
 		else return this.sendReply('This league does not have a status set.');
 	},
 
-	roomstatus: function (target, room, user) {
+	/*roomstatus: function (target, room, user) {
 		if (!room.chatRoomData) return false;
 		if (!this.canBroadcast()) return false;
-		if (room.isPublic && !room.isOfficial) {
+		if (room.isLeague) return this.parse('/leaguestatus');
+		if (room.chatRoomData.isPublic && !room.chatRoomData.isOfficial) {
 			return this.sendReplyBox(room.title + ' is a <font color="green"><b>public</b></font> room.');
-		} else if (!room.isPublic && !room.isOfficial) {
+		} else if (!room.chatRoomData.isPublic && !room.chatRoomData.isOfficial) {
 			return this.sendReplyBox(room.title + ' is <font color="red"><b>not</b></font> a public room.');
 		}
-		if (room.isOfficial && room.isPublic) {
+		if (room.chatRoomData.isOfficial && room.chatRoomData.isPublic) {
 			return this.sendReplyBox(room.title + ' is an <font color="blue"><b>official</b></font> room.');
 		}
-	},
+	},*/
 
 	roomfounder: function (target, room, user) {
 		if (!room.chatRoomData) {
