@@ -1072,7 +1072,9 @@ var commands = exports.commands = {
 			"- Language: JavaScript (Node.js)<br />" +
 			"- <a href=\"https://github.com/Zarel/Pokemon-Showdown/commits/master\">What's new?</a><br />" +
 			"- <a href=\"https://github.com/Zarel/Pokemon-Showdown\">Server source code</a><br />" +
-			"- <a href=\"https://github.com/Zarel/Pokemon-Showdown-Client\">Client source code</a>"
+			"- <a href=\"https://github.com/Zarel/Pokemon-Showdown-Client\">Client source code</a>" +
+			"- <a href=\"https://github.com/jd4565/Pokemon-Showdown\">Frost server source code</a><br />" +
+			"- <a href=\"https://github.com/jd4565/Pokemon-Showdown-Client\">Frost client source code</a>"
 		);
 	},
 /*
