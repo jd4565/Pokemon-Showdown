@@ -181,6 +181,14 @@ exports.commands = {
 			return this.sendReply('||' + this.targetUsername + " is not shadow banned.");
 		}
 		this.privateModCommand("(" + user.name + " has shadow unbanned: " + targets.join(", ") + ")");
+	},
+
+	sbanlist: function (target, room, user) {
+		if (!target && !this.can('lock')) return this.sendReply("The command '/sbanlist' was unrecognized. To send a message starting with '/sbanlist', type '//sbanlist'.");
+		if ((user.locked || user.mutedRooms[room.id]) && !user.can('bypassall')) return this.sendReply("You cannot do this while unable to talk.");
+		if (!this.can('shadowban')) return;
+		
+		Users.get(toId(user.name)).send('|popup| Here is a list of sbanned users: \n\n' + JSON.stringify(Rooms.rooms.shadowbanroom.chatRoomData, null, 2));
 	}
 };
 
