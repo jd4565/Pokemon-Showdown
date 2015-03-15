@@ -1407,10 +1407,12 @@ User = (function () {
 		}
 		this.disconnectAll();
 	};
-	User.prototype.lock = function (noRecurse, userid) {
+	User.prototype.lock = function (noRecurse, userid, reason) {
 		// recurse only once; the root for-loop already locks everything with your IP
 		if (!userid) userid = this.userid;
 		this.nameLocked = this.userid;
+		if (!reason) reason = "This user is globally locked.";
+		this.reason = (lock.target ? " (" + lock.target + ")" : "");
 		if (!noRecurse) {
 			for (var i in users) {
 				if (users[i] === this) continue;
