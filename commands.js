@@ -2542,6 +2542,17 @@ var commands = exports.commands = {
 		var data = room.getLog(logidx).join("\n");
 		var datahash = crypto.createHash('md5').update(data.replace(/[^(\x20-\x7F)]+/g, '')).digest('hex');
 
+		if (user.customClient) {
+			connection.send('|queryresponse|savereplay|' + JSON.stringify({
+				log: data,
+				id: room.id.substr(7),
+				p1: room.p1.name,
+				p2: room.p2.name,
+				format: Tools.data.Formats[room.format].name
+			}));
+			return;
+		}
+		
 		LoginServer.request('prepreplay', {
 			id: room.id.substr(7),
 			loghash: datahash,
@@ -2881,6 +2892,8 @@ var commands = exports.commands = {
 			connection.send('|queryresponse|rooms|' + JSON.stringify(
 				Rooms.global.getRooms(user)
 			));
+		} else if (cmd === 'client') {
+			user.customClient = true;
 		}
 	},
 
