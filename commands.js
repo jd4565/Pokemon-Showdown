@@ -682,7 +682,7 @@ var commands = exports.commands = {
  		if (targetUser.frostDev) return this.sendReply('Frost Developers can\'t be room kicked');
  		targetUser.popup('You have been kicked from room '+ room.title +' by '+user.name+'.');
  		targetUser.leaveRoom(room);
- 		this.addModCommand(targetUser.name + ' has been kicked from room "' + room.id + '" by '+ user.name + '.' + (target ? " (" + target + ")" : ""));
+ 		this.addModCommand(targetUser.name + ' has been kicked from ' + room.id + ' by '+ user.name + '.' + (target ? " (" + target + ")" : ""));
 	},
 
 	userauth: function (target, room, user, connection) {
