@@ -1107,7 +1107,9 @@ User = (function () {
 						this.locked = '#global';
 					}
 				} else if (body === '6') {
-					this.ban(false, userid);
+					if (!Config.disableGlobalBans) {
+						this.ban(false, userid);
+					}
 				}
 			}
 			if (users[userid] && users[userid] !== this) {
