@@ -139,6 +139,7 @@ var commands = exports.commands = {
 			var innerTarget = (innerCmdIndex >= 0 ? target.slice(innerCmdIndex + 1) : '');
 			switch (innerCmd) {
 			case 'me':
+			case 'mee':
 			case 'announce':
 				break;
 			case 'invite':
@@ -244,9 +245,9 @@ var commands = exports.commands = {
 		user.ignorePMs = true;
 		if (target in Config.groups) {
 			user.ignorePMs = target;
-			return this.sendReply("You are now blocking private messages (including challenges), except from staff and " + target + ".");
+			return this.sendReply("You are now blocking private messages, except from staff and " + target + ".");
 		}
-		return this.sendReply("You are now blocking private messages (including challenges), except from staff.");
+		return this.sendReply("You are now blocking private messages, except from staff.");
 	},
 
 	unblockpm: 'unignorepms',
@@ -272,6 +273,14 @@ var commands = exports.commands = {
 	makechatroom: function (target, room, user) {
 		if (!this.can('makeroom')) return;
 		if (!target) return this.parse('/help makechatroom');
+
+		// `,` is a delimiter used by a lot of /commands
+		// `|` and `[` are delimiters used by the protocol
+		// `-` has special meaning in roomids
+		if (target.indexOf(',') >= 0 || target.indexOf('|') >= 0 || target.indexOf('[') >= 0 || target.indexOf('-') >= 0) {
+			return this.sendReply("Room titles can't contain any of: ,|[-");
+		}
+
 		var id = toId(target);
 		if (!id) return this.parse('/help makechatroom');
 		if (Rooms.rooms[id]) return this.sendReply("The room '" + target + "' already exists.");
@@ -331,8 +340,10 @@ var commands = exports.commands = {
 				delete room.chatRoomData.isPrivate;
 				Rooms.global.writeChatRoomData();
 			}
+			if (room.type === 'chat') {
 			if (Rooms.global.chatRooms.indexOf(room) < 0) {
 				Rooms.global.chatRooms.push(room);
+			}
 			}
 		} else {
 			if (room.isOfficial) return this.sendReply('Official rooms can not be secret.');
@@ -623,12 +634,9 @@ var commands = exports.commands = {
 		} else {
 			this.addModCommand(''+name+' was appointed to Room ' + groupName + ' by '+user.name+'.');
 		}
-		if (targetUser) {
-			targetUser.updateIdentity();
-		}
-		if (room.chatRoomData) {
-			Rooms.global.writeChatRoomData();
-		}
+
+		if (targetUser) targetUser.updateIdentity(room.id);
+		if (room.chatRoomData) Rooms.global.writeChatRoomData();
 	},
 
 	unlockroom: function(target, room, user) {
@@ -708,8 +716,8 @@ var commands = exports.commands = {
 		}
 		if (targetId === user.userid || user.can('makeroom')) {
 			innerBuffer = [];
-			for (var i = 0; i < Rooms.global.chatRooms.length; i++) {
-				var curRoom = Rooms.global.chatRooms[i];
+			for (var id in Rooms.rooms) {
+				var curRoom = Rooms.rooms[id];
 				if (!curRoom.auth || !curRoom.isPrivate) continue;
 				var auth = curRoom.auth[targetId];
 				if (!auth) continue;
@@ -1110,9 +1118,9 @@ var commands = exports.commands = {
 			targetUser.punished = false;
 		},7000);
 
-		if (targetUser.group !== ' ') {
-			targetUser.setGroup(' ');
-			ResourceMonitor.log("[CrisisMonitor] " + targetUser.name + " was demoted from being locked by " + user.name + ".");
+		if (targetUser.confirmed) {
+			var from = targetUser.deconfirm();
+			ResourceMonitor.log("[CrisisMonitor] " + targetUser.name + " was locked by " + user.name + " and demoted from " + from.join(", ") + ".");
 		}
 
 
@@ -1189,9 +1197,9 @@ var commands = exports.commands = {
 			return this.privateModCommand("(" + targetUser.name + " would be banned by " + user.name + problem + ".)");
 		}
 
-		if (targetUser.group !== ' ') {
-			targetUser.setGroup(' ');
-			ResourceMonitor.log("[CrisisMonitor] " + targetUser.name + " was demoted from being banned by " + user.name + ".");
+		if (targetUser.confirmed) {
+			var from = targetUser.deconfirm();
+			ResourceMonitor.log("[CrisisMonitor] " + targetUser.name + " was banned by " + user.name + " and demoted from " + from.join(", ") + ".");
 		}
 
 		targetUser.popup("" + user.name + " has banned you." + (target ? "\n\nReason: " + target : "") + (Config.appealurl ? "\n\nIf you feel that your ban was unjustified, you can appeal:\n" + Config.appealurl : "") + "\n\nYour ban will expire in a few days.");
@@ -2731,7 +2739,7 @@ var commands = exports.commands = {
 		if (!targetUser || !targetUser.connected) {
 			return this.popupReply("The user '" + this.targetUsername + "' was not found.");
 		}
-		if ((targetUser.blockChallenges || targetUser.ignorePMs) && !user.can('bypassblocks', targetUser)) {
+		if (targetUser.blockChallenges && !user.can('bypassblocks', targetUser)) {
 			return this.popupReply("The user '" + this.targetUsername + "' is not accepting challenges right now.");
 		}
 
@@ -2751,12 +2759,19 @@ var commands = exports.commands = {
 		});
 	},
 
+	bch: 'blockchallenges',
+	blockchall: 'blockchallenges',
+	blockchalls: 'blockchallenges',
 	blockchallenges: function (target, room, user) {
 		if (user.blockChallenges) return this.sendReply("You are already blocking challenges!");
 		user.blockChallenges = true;
 		this.sendReply("You are now blocking all incoming challenge requests.");
 	},
 
+	unbch: 'allowchallenges',
+	unblockchall: 'allowchallenges',
+	unblockchalls: 'allowchallenges',
+	unblockchallenges: 'allowchallenges',
 	allowchallenges: function (target, room, user) {
 		if (!user.blockChallenges) return this.sendReply("You are already available for challenges!");
 		user.blockChallenges = false;
@@ -2798,7 +2813,7 @@ var commands = exports.commands = {
 	cmd: 'query',
 	query: function (target, room, user, connection) {
 		// Avoid guest users to use the cmd errors to ease the app-layer attacks in emergency mode
-		var trustable = (!Config.emergency || (user.named && user.authenticated));
+		var trustable = (!Config.emergency || (user.named && user.registered));
 		if (Config.emergency && ResourceMonitor.countCmd(connection.ip, user.name)) return false;
 		var spaceIndex = target.indexOf(' ');
 		var cmd = target;

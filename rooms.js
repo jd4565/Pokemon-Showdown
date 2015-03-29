@@ -95,6 +95,10 @@ var Room = (function () {
 		this.update();
 	};
 
+	Room.prototype.toString = function () {
+		return this.id;
+	};
+
 	// roomban handling
 	Room.prototype.isRoomBanned = function (user) {
 		if (!user) return;
@@ -750,7 +754,7 @@ var BattleRoom = (function () {
 		this.p2 = p2 || '';
 
 		this.sideTicksLeft = [21, 21];
-		if (!rated) this.sideTicksLeft = [28, 28];
+		if (!rated && !this.tour) this.sideTicksLeft = [28, 28];
 		this.sideTurnTicks = [0, 0];
 		this.disconnectTickDiff = [0, 0];
 
@@ -798,7 +802,7 @@ var BattleRoom = (function () {
 				this.push('|raw|ERROR: Ladder not updated: a player does not exist');
 			} else {
 				winner = Users.get(winnerid);
-				if (winner && !winner.authenticated) {
+				if (winner && !winner.registered) {
 					this.sendUser(winner, '|askreg|' + winner.userid);
 				}
 				var p1rating, p2rating;
@@ -1067,7 +1071,7 @@ var BattleRoom = (function () {
 			// if a player has left, don't wait longer than 6 ticks (1 minute)
 			maxTicksLeft = 6;
 		}
-		if (!this.rated) maxTicksLeft = 30;
+		if (!this.rated && !this.tour) maxTicksLeft = 30;
 
 		this.sideTurnTicks = [maxTicksLeft, maxTicksLeft];
 
@@ -1112,7 +1116,7 @@ var BattleRoom = (function () {
 		return false;
 	};
 	BattleRoom.prototype.kickInactiveUpdate = function () {
-		if (!this.rated) return false;
+		if (!this.rated && !this.tour) return false;
 		if (this.resetTimer) {
 			var inactiveSide = this.getInactiveSide();
 			var changed = false;
@@ -1661,6 +1665,7 @@ Rooms.createChatRoom = function (roomid, title, data) {
 console.log("NEW GLOBAL: global");
 rooms.global = new GlobalRoom('global');
 
+Rooms.Room = Room;
 Rooms.GlobalRoom = GlobalRoom;
 Rooms.BattleRoom = BattleRoom;
 Rooms.ChatRoom = ChatRoom;

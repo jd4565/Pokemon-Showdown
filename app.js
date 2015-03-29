@@ -58,6 +58,7 @@ function runNpm(command) {
 
 var isLegacyEngine = !global.Map;
 
+var fs = require('fs');
 try {
 	require('sugar');
 	if (isLegacyEngine) require('es6-shim');
@@ -68,28 +69,22 @@ if (isLegacyEngine && !new Map().set()) {
 	runNpm('update --production');
 }
 
-// Make sure Config.js exists, and copy it over from Config-example.js
-// if it doesn't
+/*********************************************************
+ * Load configuration
+ *********************************************************/
 
-var fs = require('fs');
+try {
+	global.Config = require('./config/config.js');
+} catch (err) {
+	if (err.code !== 'MODULE_NOT_FOUND') throw err;
 
-if (!('existsSync' in fs)) {
-	fs.existsSync = require('path').existsSync;
-}
-
-// Synchronously, since it's needed before we can start the server
-if (!fs.existsSync('./config/config.js')) {
+	// Copy it over synchronously from config-example.js since it's needed before we can start the server
 	console.log("config.js doesn't exist - creating one with default settings...");
 	fs.writeFileSync('./config/config.js',
 		fs.readFileSync('./config/config-example.js')
 	);
+	global.Config = require('./config/config.js');
 }
-
-/*********************************************************
- * Load Configuration
- *********************************************************/
-
-global.Config = require('./config/config.js');
 
 if (Config.watchconfig) {
 	fs.watchFile('./config/config.js', function (curr, prev) {
@@ -110,8 +105,7 @@ Config.port = cloudenv.get('PORT', Config.port);
 
 if (require.main === module && process.argv[2] && parseInt(process.argv[2])) {
 	Config.port = parseInt(process.argv[2]);
-} else if (global.overridePort) {
-	Config.port = global.overridePort;
+	Config.ssl = null;
 }
 
 global.ResourceMonitor = {

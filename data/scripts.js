@@ -227,23 +227,21 @@ exports.BattleScripts = {
 
 		// calculate true accuracy
 		var accuracy = move.accuracy;
-		var boost;
+		var boosts, boost;
 		if (accuracy !== true) {
-			var targetAbilityIgnoreAccuracy = !target.ignore['Ability'] && target.getAbility().ignoreAccuracy;
-			if (!move.ignoreAccuracy && !targetAbilityIgnoreAccuracy) {
-				boost = this.runEvent('ModifyBoost', pokemon, 'accuracy', null, pokemon.boosts.accuracy);
-				boost = this.clampIntRange(boost, -6, 6);
+			if (!move.ignoreAccuracy) {
+				boosts = this.runEvent('ModifyBoost', pokemon, null, null, Object.clone(pokemon.boosts));
+				boost = this.clampIntRange(boosts['accuracy'], -6, 6);
 				if (boost > 0) {
 					accuracy *= boostTable[boost];
 				} else {
 					accuracy /= boostTable[-boost];
 				}
 			}
-			var pokemonAbilityIgnoreEvasion = !pokemon.ignore['Ability'] && pokemon.getAbility().ignoreEvasion;
-			if (!move.ignoreEvasion && !pokemonAbilityIgnoreEvasion) {
-				boost = this.runEvent('ModifyBoost', pokemon, 'evasion', null, target.boosts.evasion);
-				boost = this.clampIntRange(boost, -6, 6);
-				if (boost > 0 && !move.ignorePositiveEvasion) {
+			if (!move.ignoreEvasion) {
+				boosts = this.runEvent('ModifyBoost', target, null, null, Object.clone(target.boosts));
+				boost = this.clampIntRange(boosts['evasion'], -6, 6);
+				if (boost > 0) {
 					accuracy /= boostTable[boost];
 				} else if (boost < 0) {
 					accuracy *= boostTable[-boost];
@@ -315,7 +313,7 @@ exports.BattleScripts = {
 			this.damage(this.clampIntRange(Math.round(totalDamage * move.recoil[0] / move.recoil[1]), 1), pokemon, target, 'recoil');
 		}
 
-		if (target && move.category !== 'Status') target.gotAttacked(move, damage, pokemon);
+		if (target && pokemon !== target) target.gotAttacked(move, damage, pokemon);
 
 		if (!damage && damage !== 0) return damage;
 
@@ -331,6 +329,7 @@ exports.BattleScripts = {
 		move = this.getMoveCopy(move);
 
 		if (!moveData) moveData = move;
+		if (!moveData.flags) moveData.flags = {};
 		var hitResult = true;
 
 		// TryHit events:
@@ -1279,6 +1278,9 @@ exports.BattleScripts = {
 				case 'leafstorm':
 					if (setupType && hasMove['gigadrain']) rejected = true;
 					break;
+				case 'seedbomb': case 'woodhammer':
+					if (hasMove['gigadrain'] && setupType !== 'Physical') rejected = true;
+					break;
 				case 'bonemerang': case 'precipiceblades':
 					if (hasMove['earthquake']) rejected = true;
 					break;
@@ -1588,7 +1590,19 @@ exports.BattleScripts = {
 			if (abilities.indexOf('Unburden') > -1 && hasMove['acrobatics']) {
 				ability = 'Unburden';
 			}
-			if (template.id === 'combee') {
+			if (template.id === 'ambipom' && !counter['technician']) {
+				// If it doesn't qualify for Technician, Skill Link is useless on it
+				// Might as well give it Pickup just in case
+				ability = 'Pickup';
+			} else if (template.id === 'aurorus' && ability === 'Snow Warning' && hasMove['hypervoice']) {
+				for (var i = 0; i < moves.length; i++) {
+					if (moves[i] === 'hypervoice') {
+						moves[i] = 'blizzard';
+						counter['ate'] = 0;
+						break;
+					}
+				}
+			} else if (template.id === 'combee') {
 				// Combee always gets Hustle but its only physical move is Endeavor, which loses accuracy
 				ability = 'Honey Gather';
 			} else if (template.id === 'lopunny' && hasMove['switcheroo'] && this.random(3)) {
@@ -2694,6 +2708,9 @@ exports.BattleScripts = {
 				case 'leafstorm':
 					if (setupType && hasMove['gigadrain']) rejected = true;
 					break;
+				case 'seedbomb': case 'woodhammer':
+					if (hasMove['gigadrain']) rejected = true;
+					break;
 				case 'weatherball':
 					if (!hasMove['sunnyday']) rejected = true;
 					break;
@@ -3022,6 +3039,8 @@ exports.BattleScripts = {
 				rejectAbility = !hasMove['sunnyday'];
 			} else if (ability in ateAbilities) {
 				rejectAbility = !counter['ate'];
+			} else if (ability === 'Unburden') {
+				rejectAbility = template.baseStats.spe > 120;
 			}
 
 			if (rejectAbility) {
@@ -3043,7 +3062,11 @@ exports.BattleScripts = {
 			if (abilities.indexOf('Intimidate') > -1 || template.id === 'mawilemega') {
 				ability = 'Intimidate';
 			}
-			if (template.id === 'unfezant') {
+			if (template.id === 'ambipom' && !counter['technician']) {
+				// If it doesn't qualify for Technician, Skill Link is useless on it
+				// Might as well give it Pickup just in case
+				ability = 'Pickup';
+			} else if (template.id === 'unfezant') {
 				ability = 'Super Luck';
 			}
 		}

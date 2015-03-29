@@ -302,7 +302,7 @@ Tournament = (function () {
 		if (this.generator.getUsers().length >= this.maxUserCount) {
 			this.startTournament(this);
 		}
-		if (this.playerCap === (users.length + 1)) this.room.add("The tournament is now full");
+		if (this.playerCap === (users.length + 1)) this.room.add("The tournament is now full.");
 	};
 	Tournament.prototype.removeUser = function (user, output) {
 		var error = this.generator.removeUser(user);
