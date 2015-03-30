@@ -1304,7 +1304,7 @@ User = (function () {
 		}
 		for (var i = 0; i < Rooms.global.chatRooms.length; i++) {
 			var room = Rooms.global.chatRooms[i];
-			if (!room.isPrivate && room.auth && userid in room.auth && room.auth[userid] !== '+') {
+			if (!room.isPrivate && room.isOfficial && room.auth && userid in room.auth && room.auth[userid] !== '+') {
 				removed.push(room.auth[userid] + room.id);
 				room.auth[userid] = '+';
 			}
